@@ -17,7 +17,7 @@
       </view>
     </view>
     <view class='news_image'>
-      <image mode='scaleToFill' src="{{item.firstImage}}"></image>
+      <image style="width: 100%;" mode='aspectFill' src="{{item.firstImage}}"></image>
     </view>
     <view class="title_new_context"> 
       {{item.content[0].text}}

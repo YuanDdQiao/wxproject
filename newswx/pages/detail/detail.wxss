@@ -4,13 +4,15 @@
   height: 100%;
   position: relative;
   right: 0;left: 0;
+  width: 100%;
+
 }
 
 /* 消息 title 顶部距离 */
 .title_new{
   width: 92%;
-  padding-top: 50rpx;
-  padding-left: 30rpx;
+  margin-top: 40rpx;
+  margin-left: 30rpx;
   font-size: 50rpx;
 }
 
@@ -19,11 +21,14 @@
   display: flex;
   font-size: 27rpx;
   opacity: 0.5;
-  padding-left: 30rpx;
+  margin-left: 30rpx;
 }
 
 .title_new_name{
-  padding-right: 30rpx;
+  display: flex;
+  flex-shrink: 0;
+  margin-right: 30rpx;
+
 }
 
 .title_new_date{
@@ -32,21 +37,21 @@
 
 /* 阅读数量显示  */
 .title_new_cn{
-  position: fixed;
+  position: absolute;
   right: 30rpx;
 }
 
 /* 图片展示宽度  */
 .news_image{
-  position: absolute;
-  display: flex;
-  width: 92%;
-  left: 32rpx;
-  right: 20rpx;
-  padding-top: 26rpx;
-  padding-bottom: 10rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
 }
 
 /* 图片后面的文字处理  */
 .title_new_context{
+  margin-right: 30rpx;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
 }
