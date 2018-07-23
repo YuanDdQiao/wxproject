@@ -19,8 +19,8 @@
     <view class='news_image'>
       <image style="width: 100%;" mode='aspectFill' src="{{item.firstImage}}"></image>
     </view>
-    <view class="title_new_context"> 
-      {{item.content[0].text}}
+    <view class="title_new_context" wx:for="{{item.content}}"> 
+      {{item.text}}
     </view>
   </view>
 
