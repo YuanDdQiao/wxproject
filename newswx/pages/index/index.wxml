@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<!--主盒子-->
+<view class="container">
+  <!--新闻类目栏-->
+  <view class="nav_top">
+    <block wx:for="{{newsItemsMap}}">
+      <!--当前项的id等于item项的id，那个就是当前状态-->
+      <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+      <view class="nav_top_item {{curNav == item.title_id ? 'active' : ''}}" bindtap="switchDownTab" data-name="{{item.title_n}}" data-index="{{index}}" data-id="{{item.title_id}}">{{item.title_m}}</view>
+    </block>
+  </view>
+  <!--新闻类型列表栏-->
+  <view class="nav_down">
+    <!--如果有数据，才遍历项-->
+    <view wx:if="{{newsItems[0].ishaveContextx}}">
+      <view wx:for="{{newsItems[0].contextx}}">
+        <!--界面跳转 -->
+          <navigator url="/pages/detail/detail?detailId={{item.id}}" >
+            <view class="nav_down_items">
+              <view class="nav_down_items_text">
+                <view class="nav_down_items_text_top">
+                  {{item.title}}
+                </view>
+                <view class='nav_down_items_text_bottom'>
+                  <view class='nav_down_items_text_bottom_right'>
+                    {{item.source}}
+                  </view>
+                   <view class='nav_down_items_text_bottom_left'>
+                    <!-- {{item.date}} -->
+                    21:06
+                  </view> 
+                </view>
+              </view>
+
+              <view class="nav_down_items_image">
+                <image src="{{item.firstImage}}"  style="width: 100px; height: 70px;"></image>
+              </view>
+            </view>
+          </navigator>
+
+      </view>
+    </view>
+    <!--如果无数据，则显示数据-->
+    <view class="nodata_text" wx:else>该分类暂无数据</view>
+  </view>
+</view>

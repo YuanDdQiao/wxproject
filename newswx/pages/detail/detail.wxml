@@ -1,0 +1,27 @@
+<!--pages/detail/detail.wxml-->
+<view class="contain">
+  <view wx:for="{{newsDetails[0]}}">
+    <view class="title_new">
+      {{item.title}}
+    </view>
+    <view class="middle_context">
+      <view class="title_new_name">
+        {{item.source}}
+      </view>
+      <view class="title_new_date">
+        <!-- {{item.date}} -->
+        21:06
+      </view>
+      <view class="title_new_cn">
+        阅读 {{item.readCount}}
+      </view>
+    </view>
+    <view class='news_image'>
+      <image mode='scaleToFill' src="{{item.firstImage}}"></image>
+    </view>
+    <view class="title_new_context"> 
+      {{item.content[0].text}}
+    </view>
+  </view>
+
+</view>

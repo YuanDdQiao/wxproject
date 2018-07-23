@@ -1,0 +1,88 @@
+.container{
+}
+
+.nav_top {
+  /*背景色和横向展示*/
+  display:flex;
+  background-color: #5CACEE;
+  padding-left: 10rpx;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  /* opacity:0.8; */
+  z-index: 1;
+}
+
+.nav_top_item {
+  /*字体高度大小和粗细*/
+  width: 110rpx;
+  /*shrink 设置不缩水  */
+  flex-shrink: 0;
+  font-size: 36rpx;
+  line-height: 42rpx
+}
+
+.nav_top .nav_top_item.active{  
+  /*背景色变成白色*/
+  background: #5CACEE;  
+  color: #ffffff; 
+} 
+
+.nav_down{
+  /*新闻列表内容显示设置*/
+  padding-top: 60rpx;
+}
+
+.nav_down_items {
+  display: flex;
+  position: relative;
+
+}
+
+.nav_down_items .nav_down_items_text{
+  padding-left: 30rpx;
+  padding-right: 10rpx;
+  height: 48rpx;
+  width: 68%;
+  font-size: 30rpx; 
+}
+
+.nav_down_items .nav_down_items_image{
+  opacity: 0.7;
+  flex-shrink: 0; 
+  padding-right: 40rpx;
+  padding-left: 0rpx;
+}
+
+/* 显示 source 和 date  */
+.nav_down_items .nav_down_items_text_bottom_left{
+  text-align: left; 
+  display:block;
+  left: 40rpx;
+  width: 50%;
+}
+.nav_down_items .nav_down_items_text_bottom_right{
+  width: 50%;
+  flex-grow: 0; 
+  left: 0;
+}
+
+/* 划分 title 和 （ date + source ）区域 */
+.nav_down_items_text_top{
+  padding-top: 0rpx;
+}
+
+.nav_down_items_text_bottom{
+  display:flex;
+  padding-top: 10rpx;
+  padding-bottom: 0rpx;
+  font-size: 20rpx;
+  height: 50%;
+}
+
+/* 没有数据项目的时候 字体展示  */
+.nodata_text{
+  padding-left: 10rpx;
+  padding-top: 20rpx;
+}
