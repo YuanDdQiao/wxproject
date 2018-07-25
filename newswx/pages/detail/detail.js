@@ -41,7 +41,6 @@ Page({
           newsDetails: temp,
           newsDate: hour + ":" + minute
         })
-        console.log(this.data.newsDetails)
       },
       complete:()=>{
         callback2 && callback2()
