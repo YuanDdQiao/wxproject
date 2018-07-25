@@ -10,7 +10,7 @@
       </view>
       <view class="title_new_date">
         <!-- {{item.date}} -->
-        21:06
+        {{newsDate}}
       </view>
       <view class="title_new_cn">
         阅读 {{item.readCount}}

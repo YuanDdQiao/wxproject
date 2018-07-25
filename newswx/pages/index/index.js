@@ -67,10 +67,36 @@ Page({
         let result= res.data.result
         let resultLen = res.data.result.length
         let resultTatle = []
+        // 为了处理日期格式，这里我做了对返回的数据进行forEach再次处理
+        let forEachDateResult=[]
+        let TorF=1
+        // 日志输出测试
+        console.log(res)
+        for (let i = 0; i < resultLen;i+=1){
+          // 时间格式化
+          var indexDate = new Date(Date.parse(result[i].date))
+          var indexHour = indexDate.getHours();
+          var indexMinute = indexDate.getMinutes();
+
+          // 假如 第一条新闻为 热门新闻
+          if (i!=0){
+            TorF = 0
+          }
+          forEachDateResult.push({
+            id: result[i].id,
+            title: result[i].title,
+            // 这里具体处理了时间格式，方便页面渲染
+            date: indexHour + ":" + indexMinute,
+            firstImage: result[i].firstImage,
+            source: result[i].source,
+            cnNum: TorF
+          })
+
+        }
         // console.log(res)
         resultTatle.push({
           ishaveContextx: resultLen,
-          contextx: result
+          contextx: forEachDateResult
         })
         this.setData({
           newsItems: resultTatle
@@ -81,10 +107,6 @@ Page({
       }
     })
   },
-  // 日期处理
-  // getDate(opdate){
-  //   opdate
-  // }
   // 加载数据
   onLoad(){
     this.getNow()
@@ -103,5 +125,5 @@ Page({
     })
     this.getNow()
 
-  }
+  },
 })

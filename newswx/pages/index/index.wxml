@@ -15,28 +15,48 @@
     <view wx:if="{{newsItems[0].ishaveContextx}}">
       <view wx:for="{{newsItems[0].contextx}}">
         <!--界面跳转 -->
-          <navigator url="/pages/detail/detail?detailId={{item.id}}" >
-            <view class="nav_down_items">
-              <view class="nav_down_items_text">
-                <view class="nav_down_items_text_top">
+        <navigator url="/pages/detail/detail?detailId={{item.id}}" > 
+          <!-- 热门项  -->
+          <view id="id_nav_down_items" wx:if="{{item.cnNum}}">
+            <image src="{{item.firstImage}}" style="width: 100%;" mode='aspectFill'>
+              <view class='remen_style_logo'>热门</view>
+              <view class='id_nav_down_items_list'>
+                <view class="id_nav_down_items_text_top">
                   {{item.title}}
                 </view>
-                <view class='nav_down_items_text_bottom'>
-                  <view class='nav_down_items_text_bottom_right'>
+                <view class='id_nav_down_items_text_bottom'>
+                  <view class='id_nav_down_items_text_bottom_right'>
                     {{item.source}}
                   </view>
-                   <view class='nav_down_items_text_bottom_left'>
-                    <!-- {{item.date}} -->
-                    21:06
+                    <view class='id_nav_down_items_text_bottom_left'>
+                      {{item.date}} 
                   </view> 
                 </view>
               </view>
 
-              <view class="nav_down_items_image">
-                <image src="{{item.firstImage}}"  style="width: 100px; height: 70px;"></image>
+            </image>
+            
+          </view>
+          <!--非热门项  -->
+          <view class="nav_down_items" wx:else>
+            <view class="nav_down_items_text">
+              <view class="nav_down_items_text_top">
+                {{item.title}}
+              </view>
+              <view class='nav_down_items_text_bottom'>
+                <view class='nav_down_items_text_bottom_right'>
+                  {{item.source}}
+                </view>
+                  <view class='nav_down_items_text_bottom_left'>
+                    {{item.date}} 
+                </view> 
               </view>
             </view>
-          </navigator>
+            <view class="nav_down_items_image">
+              <image src="{{item.firstImage}}"  style="width: 100px; height: 70px;"></image>
+            </view>
+          </view>
+        </navigator> 
 
       </view>
     </view>
