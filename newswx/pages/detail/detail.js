@@ -25,7 +25,6 @@ Page({
         id: this.data.id
       },
       success: res => {
-        console.log(res)
         let resultn=res.data.result;
         // 时间格式化 年月日时分秒
         let detialDate = new Date(Date.parse(res.data.result.date))

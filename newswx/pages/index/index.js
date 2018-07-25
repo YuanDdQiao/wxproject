@@ -71,7 +71,7 @@ Page({
         let forEachDateResult=[]
         let TorF=1
         // 日志输出测试
-        console.log(res)
+        // console.log(res)
         for (let i = 0; i < resultLen;i+=1){
           // 时间格式化
           var indexDate = new Date(Date.parse(result[i].date))
