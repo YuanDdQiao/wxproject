@@ -70,8 +70,11 @@ Page({
         // 为了处理日期格式，这里我做了对返回的数据进行forEach再次处理
         let forEachDateResult=[]
         let TorF=1
+        let TorI=1
         // 日志输出测试
+        // console.log("--start--")
         // console.log(res)
+        // console.log("--stop--")
         for (let i = 0; i < resultLen;i+=1){
           // 时间格式化
           var indexDate = new Date(Date.parse(result[i].date))
@@ -82,6 +85,12 @@ Page({
           if (i!=0){
             TorF = 0
           }
+          // 对请求的图片资源有于否判断做页面渲染
+          if (result[i].firstImage.length == 0) {
+            TorI = 0
+          }else{
+            TorI = 1
+          }
           forEachDateResult.push({
             id: result[i].id,
             title: result[i].title,
@@ -89,7 +98,8 @@ Page({
             date: indexHour + ":" + indexMinute,
             firstImage: result[i].firstImage,
             source: result[i].source,
-            cnNum: TorF
+            cnNum: TorF,
+            imageLen: TorI
           })
 
         }
@@ -103,13 +113,17 @@ Page({
         })
       },
       complete:()=>{
-        callback && callback()
+        typeof callback === 'function' && callback()
       }
-    })
+    });
+    wx.hideLoading();
   },
   // 加载数据
   onLoad(){
-    this.getNow()
+    wx.showLoading({
+      title: "加载中"
+    });
+    this.getNow();
   },
   //事件处理函数
   switchDownTab: function (e) {
@@ -118,12 +132,13 @@ Page({
     index = parseInt(e.target.dataset.index);
     let tn=e.target.dataset.name;
     // 把点击到的某一项，设为当前index  
-    this.setData({
-      curNav: id,
-      curIndex: index,
-      xmlType:tn,
-    })
-    this.getNow()
-
+    if (tn !== this.data.xmlType) {
+      this.setData({
+        curNav: id,
+        curIndex: index,
+        xmlType:tn,
+      })
+      this.getNow()
+    }
   },
 })

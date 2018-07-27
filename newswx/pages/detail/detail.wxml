@@ -16,11 +16,19 @@
         阅读 {{item.readCount}}
       </view>
     </view>
-    <view class='news_image'>
-      <image style="width: 100%;" mode='aspectFill' src="{{item.firstImage}}"></image>
-    </view>
-    <view class="title_new_context" wx:for="{{item.content}}"> 
-      {{item.text}}
+    <view class="title_new_context">
+      <view class='news_image'  wx:for="{{item.content}}">
+        <!-- 如果有图片就展示 -->
+        <view wx:if="{{item.type == 'image'}}">
+          <image style="width: 100%;" mode='aspectFill' src="{{item.src}}"></image>
+        </view>
+        <view wx:elif="{{item.type == 'strong'}}" style="font-size:30rpx;font-weigth:bold;font-family:'微软雅黑';font-style:italic;">
+          {{item.text}}
+        </view>
+        <view wx:else>
+          {{item.text}}
+        </view>
+      </view>
     </view>
   </view>
 

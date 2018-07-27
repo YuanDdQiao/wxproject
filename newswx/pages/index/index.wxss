@@ -92,7 +92,7 @@
 .nav_down_items .nav_down_items_image{
   opacity: 0.7;
   flex-shrink: 0; 
-  padding-right: 40rpx;
+  padding-right: 30rpx;
   padding-left: 0rpx;
 }
 

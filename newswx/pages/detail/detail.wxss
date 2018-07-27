@@ -41,18 +41,15 @@
   right: 30rpx;
 }
 
-/* 图片展示宽度  */
-.news_image{
-  margin-top: 20rpx;
-  margin-left: 30rpx;
-  margin-right: 30rpx;
-}
-
 /* 图片之后的文字处理  */
 .title_new_context{
   margin-right: 30rpx;
   margin-left: 30rpx;
-  margin-top: 20rpx;
-  margin-bottom: 10rpx;
+  padding-bottom: 10rpx;
   font-size: 30rpx;
+}
+
+/* 图片展示宽度  */
+.news_image{
+  margin-top: 20rpx;
 }

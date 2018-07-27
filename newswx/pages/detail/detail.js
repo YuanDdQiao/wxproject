@@ -7,18 +7,12 @@ Page({
   },
   // 每个新闻详情加载以及获取新闻的 id
   onLoad(options){
-    // console.log("hellow world...." + options.detailId)
     this.setData({
       id: options.detailId,
     }),
     this.getDetail()
   },
-  onPullDownRefresh(){
-    this.getDetail(()=>{
-      wx.stopPullDownRefresh()
-    })
-  },
-  getDetail(callback2){
+  getDetail(){
     wx.request({
       url: 'https://test-miniprogram.com/api/news/detail',
       data: {
@@ -41,9 +35,6 @@ Page({
           newsDetails: temp,
           newsDate: hour + ":" + minute
         })
-      },
-      complete:()=>{
-        callback2 && callback2()
       }
     })
   }

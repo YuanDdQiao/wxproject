@@ -3,7 +3,7 @@
 <view class="container">
   <!--新闻类目栏-->
   <view class="nav_top">
-    <block wx:for="{{newsItemsMap}}">
+    <block wx:for="{{newsItemsMap}}" wx:key="unique">
       <!--当前项的id等于item项的id，那个就是当前状态-->
       <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
       <view class="nav_top_item {{curNav == item.title_id ? 'active' : ''}}" bindtap="switchDownTab" data-name="{{item.title_n}}" data-index="{{index}}" data-id="{{item.title_id}}">{{item.title_m}}</view>
@@ -13,29 +13,49 @@
   <view class="nav_down">
     <!--如果有数据，才遍历项-->
     <view wx:if="{{newsItems[0].ishaveContextx}}">
-      <view wx:for="{{newsItems[0].contextx}}">
+      <view wx:for="{{newsItems[0].contextx}}" wx:key="unique">
         <!--界面跳转 -->
         <navigator url="/pages/detail/detail?detailId={{item.id}}" > 
           <!-- 热门项  -->
           <view id="id_nav_down_items" wx:if="{{item.cnNum}}">
-            <image src="{{item.firstImage}}" style="width: 100%;" mode='aspectFill'>
-              <view class='remen_style_logo'>热门</view>
-              <view class='id_nav_down_items_list'>
-                <view class="id_nav_down_items_text_top">
-                  {{item.title}}
-                </view>
-                <view class='id_nav_down_items_text_bottom'>
-                  <view class='id_nav_down_items_text_bottom_right'>
-                    {{item.source}}
+            <!-- 图片内容不为空 -->
+            <view wx:if="{{item.imageLen}}">
+              <image src="{{item.firstImage}}" style="width: 100%;" mode='aspectFill'>
+                <view class='remen_style_logo'>热门</view>
+                <view class='id_nav_down_items_list'>
+                  <view class="id_nav_down_items_text_top">
+                    {{item.title}}
                   </view>
-                    <view class='id_nav_down_items_text_bottom_left'>
-                      {{item.date}} 
-                  </view> 
+                  <view class='id_nav_down_items_text_bottom'>
+                    <view class='id_nav_down_items_text_bottom_right'>
+                      {{item.source}}
+                    </view>
+                      <view class='id_nav_down_items_text_bottom_left'>
+                        {{item.date}} 
+                    </view> 
+                  </view>
                 </view>
-              </view>
-
-            </image>
-            
+              </image>
+            </view>
+            <!-- 图片内容为空，选择默认图片填充 -->
+            <view wx:else>
+              <image src="/pages/image/default.jpg" style="width: 100%;" mode='aspectFill'>
+                <view class='remen_style_logo'>热门</view>
+                <view class='id_nav_down_items_list'>
+                  <view class="id_nav_down_items_text_top">
+                    {{item.title}}
+                  </view>
+                  <view class='id_nav_down_items_text_bottom'>
+                    <view class='id_nav_down_items_text_bottom_right'>
+                      {{item.source}}
+                    </view>
+                      <view class='id_nav_down_items_text_bottom_left'>
+                        {{item.date}} 
+                    </view> 
+                  </view>
+                </view>
+              </image>
+            </view>
           </view>
           <!--非热门项  -->
           <view class="nav_down_items" wx:else>
@@ -52,12 +72,14 @@
                 </view> 
               </view>
             </view>
-            <view class="nav_down_items_image">
+            <view class="nav_down_items_image" wx:if="{{item.imageLen}}">
               <image src="{{item.firstImage}}"  style="width: 100px; height: 70px;"></image>
+            </view>
+            <view class="nav_down_items_image" wx:else>
+              <image src="/pages/image/default.jpg"  style="width: 100px; height: 70px;"></image>
             </view>
           </view>
         </navigator> 
-
       </view>
     </view>
     <!--如果无数据，则显示数据-->
