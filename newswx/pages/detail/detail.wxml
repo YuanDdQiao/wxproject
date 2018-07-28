@@ -1,6 +1,6 @@
 <!--pages/detail/detail.wxml-->
 <view class="contain">
-  <view wx:for="{{newsDetails[0]}}">
+  <view wx:for="{{newsDetails[0]}}" wx:key="unique">
     <view class="title_new">
       {{item.title}}
     </view>
@@ -17,7 +17,7 @@
       </view>
     </view>
     <view class="title_new_context">
-      <view class='news_image'  wx:for="{{item.content}}">
+      <view class='news_image'  wx:for="{{item.content}}" wx:key="unique">
         <!-- 如果有图片就展示 -->
         <view wx:if="{{item.type == 'image'}}">
           <image style="width: 100%;" mode='aspectFill' src="{{item.src}}"></image>
