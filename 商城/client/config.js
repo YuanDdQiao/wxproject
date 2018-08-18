@@ -23,8 +23,11 @@ var config = {
         // 上传图片接口
         uploadUrl: `${host}/weapp/upload`,
 
-        // 商品详情获取
-        productList: `${host}/weapp/product`
+        // 拉取商品列表
+        productList: `${host}/weapp/product`,
+
+        // 拉取商品详情
+        productDetail: `${host}/weapp/product/`
     }
 };
 
