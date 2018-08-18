@@ -32,7 +32,7 @@ const CONF = {
          */
         region: 'ap-shanghai',
         // Bucket 名称
-        fileBucket: 'product-1257217617',
+        fileBucket: 'product',
         // 文件夹
         uploadFolder: ''
     },
