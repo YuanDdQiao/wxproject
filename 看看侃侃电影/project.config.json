@@ -1,0 +1,10 @@
+{
+	"miniprogramRoot": "./client",
+	"qcloudRoot": "./server",
+	"setting": {
+		"newFeature": true
+	},
+	"appid": "wx6dcde8d3de1e846d",
+	"projectname": "侃侃电影",
+	"condition": {}
+}
