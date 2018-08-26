@@ -3,7 +3,7 @@ const CONF = {
     rootPathname: '',
 
     // 微信小程序 App ID
-    appId: 'wx6dcde8d3de1e846d',
+    appId: '你的 App ID',
 
     // 微信小程序 App Secret
     appSecret: '',
@@ -21,7 +21,7 @@ const CONF = {
         port: 3306,
         user: 'root',
         db: 'cAuth',
-        pass: 'wx6dcde8d3de1e846d',
+        pass: '你的 App ID',
         char: 'utf8mb4'
     },
 
@@ -30,9 +30,9 @@ const CONF = {
          * 地区简称
          * @查看 https://cloud.tencent.com/document/product/436/6224
          */
-        region: 'ap-shanghai',
+        region: 'ap-guangzhou',
         // Bucket 名称
-        fileBucket: 'product',
+        fileBucket: 'qcloudtest',
         // 文件夹
         uploadFolder: ''
     },

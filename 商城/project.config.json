@@ -1,13 +1,15 @@
 {
-	"client": "./client",
-	"svr": "./server",
 	"miniprogramRoot": "./client",
 	"qcloudRoot": "./server",
 	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
 		"newFeature": true
 	},
-	"appid": "wx6dcde8d3de1e846d",
-	"projectname": "商城小程序",
+	"appid": "你的 App ID",
+	"projectname": "cn-wechat-term2",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -25,12 +27,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
 					"name": "商品详情页",
-					"pathName": "pages/detail/detail"
+					"pathName": "pages/detail/detail",
+					"query": ""
 				}
 			]
 		}
