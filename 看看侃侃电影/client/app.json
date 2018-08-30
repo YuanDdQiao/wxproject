@@ -1,13 +1,16 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/addCgi/addCgi"
+    "pages/hot/hot",
+    "pages/user/user",
+    "pages/top-detail/top-detail",
+    "pages/mv-detail/mv-detail"
   ],
-  "window":{
-    "backgroundColor":"#F6F6F6",
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
     "navigationBarTitleText": "侃侃电影",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }
