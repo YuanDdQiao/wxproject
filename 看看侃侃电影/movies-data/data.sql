@@ -1,3 +1,25 @@
+
+--
+-- 表的结构
+--
+
+CREATE TABLE `mov_user` (
+  `id` int(11) NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `mov_comment` (
+  `id` int(11) NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) NOT NULL,
+  `content` varchar(511) CHARACTER SET utf8 DEFAULT NULL,
+  `images` varchar(1023) DEFAULT NULL,
+  `movie_id` int(11) NOT NULL,
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE `movies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,

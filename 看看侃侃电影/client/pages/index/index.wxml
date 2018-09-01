@@ -1,30 +1,44 @@
 <!--pages/index/index.wxml-->
-<view class='box' wx:if="{{gethotmovie}}">
-  <view class="home-page">
-    <view class='home-top'>
-      <navigator class='home-mv-detail' url="/pages/mv-detail/mv-detail">
-        <image class='home-mv-detail image' mode='aspectFill' src="{{gethotmovie.image}}"></image>
+<view wx:if="{{!userInfo}}">
+  <image class="bg" src="/Avatar/bg.png"></image>
+  <view class="unlogin-card">
+    <view class="unlogin-head"></view>
+    <view class="unlogin-info">
+      <view class="unlogin-text">未登录</view>
+      <view class="unlogin-tips">点击微信登录后可方浏览影片</view>
+    </view>
+  </view>
+  <button wx:if="{{locationAuthType==0}}" class="unlogin-btn" open-type='getUserInfo' bindgetuserinfo='onTapLogin'>微信登录</button>
+  <button wx:if="{{locationAuthType==1}}" class="unlogin-btn" open-type='openSetting' bindopensetting="onTapLogin">授权登录</button>
+</view>
+<view class='box' wx:else>
+  <view wx:if="{{gethotmovie}}">
+    <view class="home-page">
+      <view class='home-top'>
+        <navigator class='home-mv-detail' url="/pages/mv-detail/mv-detail">
+          <image class='home-mv-detail image' mode='aspectFill' src="{{gethotmovie.image}}"></image>
+        </navigator>
+        <view class='home-mv-title'>{{gethotmovie.title}}</view>
+        <navigator class='home-top-detail' url="/pages/top-detail/top-detail">
+          <view class='home-top-detail' wx:if='{{userInfo}}'> xxx 给你推荐了一部电影</view>
+          <view class='home-top-detail' wx:else> 抱歉哦，暂时还没有其TA影迷推荐呐 ！</view>
+        </navigator>
+      </view>
+    </view>
+    <view class='home-down'>
+    <!-- 疑问一：这里怎么配置点击事件不是样式设置的 50% 区域选中，而只是图片和文字部分选择 -->
+      <navigator class='home-hot' url="/pages/hot/hot">
+        <image class='home-hot-zan' mode='aspectFill' src="/Avatar/zan.png"></image>
+        <view class='home-hot-zan-text'>热门</view>
       </navigator>
-      <view class='home-mv-title'>{{gethotmovie.title}}</view>
-      <navigator class='home-top-detail' url="/pages/top-detail/top-detail">
-        <view class='home-top-detail' wx:if='{{userInfo}}'></view>
-        <view class='home-top-detail' wx:esle> 抱歉哦，暂时还没有其TA影迷推荐呐 ！</view>
+      <navigator class='home-user' url="/pages/user/user">
+        <image class='home-hot-my' mode='aspectFill' src="/Avatar/my.png"></image>
+        <view class='home-hot-my-text'>我的</view>
       </navigator>
     </view>
   </view>
-  <view class='home-down'>
-  <!-- 疑问一：这里怎么配置点击事件不是样式设置的 50% 区域选中，而只是图片和文字部分选择 -->
-    <navigator class='home-hot' url="/pages/hot/hot">
-      <image class='home-hot-zan' mode='aspectFill' src="/Avatar/zan.png"></image>
-      <view class='home-hot-zan-text'>热门</view>
-    </navigator>
-    <navigator class='home-user' url="/pages/user/user">
-      <image class='home-hot-my' mode='aspectFill' src="/Avatar/my.png"></image>
-      <view class='home-hot-my-text'>我的</view>
-    </navigator>
+  <view class='null-box' wx:else>
+    <view>改天再来吧，今天</view>
+    <view>服务器睡啦 ！！</view>
   </view>
-</view>
-<view class='null-box' wx:else>
-  <view>改天再来吧，今天</view>
-  <view>服务器睡啦 ！！</view>
 </view>
