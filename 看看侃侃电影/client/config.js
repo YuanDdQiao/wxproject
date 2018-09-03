@@ -19,6 +19,9 @@ var config = {
 
         // 当前热门电影接口
         // getCurrtHot:`${host}/weapp/getcurrt`
+
+        // 拉取用户信息
+        user: `${host}/weapp/user`,
     }
 };
 
