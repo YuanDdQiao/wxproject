@@ -36,6 +36,7 @@ App({
         }
       }
     })
+
   },
 
   doQcloudLogin({ success, error }) {

@@ -1,1 +1,98 @@
 /* pages/mv-detail/mv-detail.wxss */
+.detail-all{
+  height: 100%;
+  width: 100%;
+  background-color: hsla(189, 19%, 93%, 0.582);
+}
+.detail-space-around{
+  position: fixed;
+  justify-content: space-around;
+  margin: 80rpx 28rpx 50rpx 28rpx ;
+  background-color: white;
+  height: 90%;
+  width: 92.5%;
+  /* 白色周围一圈透明黑 */
+  box-shadow: 0 2rpx 13rpx 5rpx rgba(0, 0, 0, 0.02);
+}
+.detail-space-around-nil{
+  margin-top: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 50rpx;
+  color: #34373D;
+  width: 100rpx;
+  font-weight: bold;
+}
+.detail-image{
+  width: 240rpx;
+  height: 320rpx;
+  margin-top: -50rpx;
+  margin-left: 50%;
+  transform: translateX(-50%)
+}
+.detail-title{
+  font-size: 36rpx;
+  color: #34373D;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.detail-ctx{
+  justify-content: space-around;
+  margin: 40rpx 56rpx auto;
+  font-size: 28rpx;
+  /* 超过13行 自动点点点隐藏后文 */
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 13;
+  -webkit-box-orient: vertical;
+}
+.detail-footer{
+  display: flex;
+  position: absolute;
+  bottom: 50rpx;
+  margin-top: auto;
+  height: 80rpx;
+  margin-left: 50%;
+  transform: translateX(-50%)
+}
+.detail-left-bottom{
+  /* 白色周围一圈透明黑 */
+  box-shadow: 0 2rpx 13rpx 5rpx hsla(189, 19%, 93%, 0.582);
+  border:2px solid hsla(189, 19%, 93%, 0.582);
+  border-radius: 10rpx;
+  width: 240rpx;
+  margin-right: 50rpx;
+  display: flex;
+  align-items: center;
+}
+.detail-right-bottom{
+  /* 白色周围一圈透明黑 */
+  box-shadow: 0 2rpx 13rpx 5rpx hsla(189, 19%, 93%, 0.582);
+  border:2px solid hsla(189, 19%, 93%, 0.582);
+  border-radius: 10rpx;
+  width: 240rpx;
+  display: flex;
+  align-items: center;
+}
+.left-footer-img{
+  height: 50rpx;
+  width: 20%;
+  margin-left: 10%;
+}
+.left-footer-txt{
+  font-size: 30rpx;
+  margin-left: 5%;
+}
+.right-footer-img{
+  height: 50rpx;
+  width: 20%;
+  margin-left: 10%;
+}
+.right-footer-txt{
+  font-size: 30rpx;
+  margin-left: 5%;
+}

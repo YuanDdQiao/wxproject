@@ -32,7 +32,7 @@
 .home-mv-detail image{
   width: 100%;
   height: 100%;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 .home-mv-title{
   width: 100%;
@@ -46,14 +46,37 @@
 .home-top-detail{
   bottom: 0;
   width: 100%;
-  height: 10%;
-  background-color: rgb(209, 232, 245);
+  height: 100rpx;
   font-size: 35rpx;
   border-radius: 20%;
   /* -moz-box-shadow:-10px -10px 20px rgb(209, 232, 245); 
   -webkit-box-shadow:-10px -10px 20px rgb(209, 232, 245);  */
-  box-shadow:-10px -10px 20px rgb(209, 232, 245);
 }
+.home-top-detail-user-hn{
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+}
+.notc{
+  text-align: center;
+}
+.user-head{
+  flex-shrink: 0;
+  border-radius: 50%;
+  height: 70rpx;
+  width: 70rpx;
+  margin-left: 30rpx;
+}
+.user-name {
+  flex: 1;
+  margin: 0 31rpx;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.8;
+}
+
 .home-down{
   display: flex;
   position: fixed;  

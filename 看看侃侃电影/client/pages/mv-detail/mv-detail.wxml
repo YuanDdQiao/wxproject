@@ -1,2 +1,19 @@
 <!--pages/mv-detail/mv-detail.wxml-->
-<text>pages/mv-detail/mv-detail.wxml</text>
+<view class='detail-all'>
+  <view class='detail-space-around' wx:if='{{mvdetail}}'>
+    <image class='detail-image' mode='aspectFill' src='{{mvdetail.image}}'></image>
+    <view class='detail-title'>{{mvdetail.title}}</view>
+    <view class='detail-ctx'>{{mvdetail.description}}</view>
+    <view class='detail-footer'>
+      <view class='detail-left-bottom' bindtap='displaycom'>
+        <image class='left-footer-img' mode='aspectFill' src='/Avatar/display.png'></image>
+        <text class='left-footer-txt'>查看影评</text>
+      </view>
+      <view class='detail-right-bottom' bindtap='addcom'>
+        <image class='right-footer-img' mode='aspectFill' src='/Avatar/message.png'></image>
+        <text class='right-footer-txt'>添加影评</text>
+      </view>
+    </view>
+  </view>
+  <view class='detail-space-around-nil' wx:else>没有数据哦！</view>
+</view>

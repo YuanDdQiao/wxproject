@@ -1,2 +1,34 @@
 <!--pages/top-detail/top-detail.wxml-->
-<text>pages/top-detail/top-detail.wxml</text>
+<!-- 
+id: options.id,
+title: options.title,
+image: options.image,
+avatar: options.avatar,
+username: options.username,
+content: options.content, 
+-->
+<view class='show-bg'>
+  <view class='show-comment-items' wx:if='{{comment}}'>
+    <image class='show-comment-image' mode='aspectFill' src='{{comment.image}}'></image>
+    <view class='show-comment-title'>{{comment.title}}</view>
+    <view class="show-comment-bottem">
+      <view class='user-info'>
+        <image class='user-head' mode='aspectFit' src="{{!!comment?comment.avatar: '/Avatar/user-unlogin.png'}}"></image>
+        <view class='user-name' >{{!!comment?comment.username:""}}的影评</view>
+      </view>    
+    </view>
+    <view class='reEditComBox'>
+      <text class='reEditComText'>{{comment.content}}</text>
+    </view>
+    <view class='show-comment-footer'>
+      <view class='show-comment-left-bottom' bindtap='setCollect'>
+        <image class='left-footer-img' mode='aspectFill' src='/Avatar/shoucang.png'></image>
+        <text class='left-footer-txt'>收藏影评</text>
+      </view>
+      <view class='show-comment-right-bottom' bindtap='writeComment'>
+        <image class='right-footer-img' mode='aspectFill' src='/Avatar/shuru.png'></image>
+        <text class='right-footer-txt'>写影评</text>
+      </view>
+    </view>
+  </view>
+</view>

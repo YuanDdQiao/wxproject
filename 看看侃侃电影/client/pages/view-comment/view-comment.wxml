@@ -1,0 +1,26 @@
+<!--client/pages/view-comment/view-comment.wxml-->
+<view class='show-bg'>
+  <view class='show-comment-items' wx:if='{{comment}}'>
+    <image class='show-comment-image' mode='aspectFill' src='{{comment.image}}'></image>
+    <view class='show-comment-title'>{{comment.title}}</view>
+    <view class="show-comment-bottem">
+      <view class='user-info'>
+        <image class='user-head' mode='aspectFit' src="{{!!userInfo?userInfo.avatarUrl: '/Avatar/user-unlogin.png'}}"></image>
+        <view class='user-name' >{{!!userInfo?userInfo.nickName:""}}的影评</view>
+      </view>    
+    </view>
+    <view class='reEditComBox'>
+      <text class='reEditComText'>{{comment.recomments}}</text>
+    </view>
+    <view class='show-comment-footer'>
+      <view class='show-comment-left-bottom' bindtap='reEditCom'>
+        <image class='left-footer-img' mode='aspectFill' src='/Avatar/return.png'></image>
+        <text class='left-footer-txt'>重新编辑</text>
+      </view>
+      <view class='show-comment-right-bottom' bindtap='addComment'>
+        <image class='right-footer-img' mode='aspectFill' src='/Avatar/message.png'></image>
+        <text class='right-footer-txt'>发布影评</text>
+      </view>
+    </view>
+  </view>
+</view>

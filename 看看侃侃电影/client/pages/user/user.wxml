@@ -1,2 +1,26 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<!-- 个人中心页 -->
+<view class='user-card'>
+  <view class="{{curNav === 0? 'user-store':'hide'}}" bindtap='clickShowT'>
+    <view class='user-store-top-c'>收藏的影评</view>
+    <image class='user-store-top-i' mode='aspectFit' src='/Avatar/grey-arrow.png'></image>
+  </view>
+  <view class="{{curNav === 1? 'user-store':'hide'}}" bindtap='clickShowF'>
+    <view class='user-store-top-c'>收藏的影评</view>
+    <image class='user-store-top-i t' mode='aspectFit' src='/Avatar/grey-arrow2.png'></image>
+  </view>
+  <view wx:if='{{curNav===1}}' class='user-store-items' wx:for='{{liststoremv}}' wx:for-item='items' wx:key='id'>
+    <image class='item-image' src='{{items.image}}' mode='aspectFit'></image>
+    <view class='item-list'>
+      <view class='store-title'>{{items.title}}</view>
+      <view class='store-context'>{{items.context}}</view>
+      <view class='user-info'>
+        <image class='user-head' mode='aspectFit' src="{{!!userInfo?userInfo.avatarUrl: '/Avatar/user-unlogin.png'}}"></image>
+        <view class='user-name' >{{!!userInfo?userInfo.nickName:""}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='index-result'>
+  <navigator class='result-ctx' url='/pages/index/index'>回到首页</navigator>
+</view>

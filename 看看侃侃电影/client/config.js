@@ -3,7 +3,7 @@
  */
 
 // 此处主机域名修改成腾讯云解决方案分配的域名
-var host = 'https://xko0lahr.qcloud.la/';
+var host = 'https://xko0lahr.qcloud.la';
 
 var config = {
 
@@ -17,12 +17,39 @@ var config = {
         // 测试的请求地址，用于测试会话
         requestUrl: `${host}/weapp/user`,
 
-        // 当前热门电影接口
-        // getCurrtHot:`${host}/weapp/getcurrt`
-
         // 拉取用户信息
         user: `${host}/weapp/user`,
-    }
+
+        // 拉取电影信息
+        hotMovies: `${host}/weapp/hotMovies`,
+      
+        // 拉去电影详情
+        moviesDetail: `${host}/weapp/moviesDetail/`,
+
+        // 拉去热门电影列表
+        moviesList: `${host}/weapp/moviesList`,
+      
+        // 拉去电影评价列表
+        commentsListItem: `${host}/weapp/commentsListItem`,
+      
+        // 提交电影评价
+        addComment: `${host}/weapp/addComment`,
+      
+        // 获取电影评价
+        getComment: `${host}/weapp/getComment`,
+      
+        // 收藏电影
+        setCollect: `${host}/weapp/addCollect`,
+      
+        // 电影收藏列表
+        getCollectList: `${host}/weapp/getCollectList`,
+
+        // 电影评价列表
+        getComments: `${host}/weapp/getComments`,
+
+        // 电影评价列表
+        getUserComments: `${host}/weapp/getUserComments`,
+     }
 };
 
 module.exports = config;

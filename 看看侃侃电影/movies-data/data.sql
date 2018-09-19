@@ -2,22 +2,31 @@
 --
 -- 表的结构
 --
-
-CREATE TABLE `mov_user` (
-  `id` int(11) NOT NULL,
+CREATE TABLE `mov_collect` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user` varchar(255) NOT NULL,
-  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `username` varchar(255) DEFAULT NULL,
+  `avatar` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `content` varchar(511) CHARACTER SET utf8 DEFAULT NULL,
+  `cmt` varchar(2) NOT NULL,
+  `video` varchar(1023) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `mov_comment` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user` varchar(255) NOT NULL,
   `username` varchar(255) DEFAULT NULL,
   `avatar` varchar(255) NOT NULL,
   `content` varchar(511) CHARACTER SET utf8 DEFAULT NULL,
-  `images` varchar(1023) DEFAULT NULL,
+  `video` varchar(1023) DEFAULT NULL,
   `movie_id` int(11) NOT NULL,
-  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `cmt` varchar(2) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `movies` (

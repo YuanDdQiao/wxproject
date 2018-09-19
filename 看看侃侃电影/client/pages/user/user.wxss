@@ -1,1 +1,141 @@
 /* pages/user/user.wxss */
+/* 个人中心*/
+.hide{
+  display:none;
+}
+.user-card{
+  justify-content: space-around;
+  margin: 0rpx 52rpx 28rpx;
+}
+.user-store{
+  width: 100%;
+  height: 100rpx;
+  margin-top: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.user-store-top-c{
+  color: rgb(255, 153, 0);
+  font-size: 30rpx;
+  padding-left: 250rpx;
+}
+.user-store-top-i{
+  width: 10rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+  
+  /* 右 下 箭头图片颜色设置 */
+
+  /* position: relative;
+  left: -20px;
+  border-right: 20px solid transparent;
+  -webkit-filter: drop-shadow(rgb(255, 153, 0) 20px 0);
+  filter: drop-shadow(rgb(255, 153, 0) 20px 0);
+ */
+ /* 搞不定 */
+}
+.t{
+  width: 20rpx;
+  height: 10rpx;
+  margin-left: 10rpx;
+}
+.user-store-items{
+  display: flex;
+  position: relative;
+  flex-shrink: 0;
+  align-items: center;
+  background-color: white;
+  margin: 52rpx auto;
+}
+.item-image{
+  flex-shrink: 0;
+  width: 240rpx;
+  height: 320rpx;
+}
+.item-list{
+  flex-shrink: 0;
+  margin: 0 20rpx;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.store-title{
+  font-size: 33rpx;
+  color: #34373D;
+  font-weight: bold;
+  width: 400rpx;
+  margin: 50rpx 0 20rpx 0 ;
+}
+.store-context{
+  flex-shrink: 0;
+  height: 50rpx;
+  width: 350rpx;
+  font-size: 25rpx;
+  margin: 20rpx 0 20rpx 0 ;
+  /* 自动换行 */
+  display: -webkit-box;
+  font-size:25rpx;
+  color:#000000;
+  line-height: 40rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:3;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+/* 文字长度限制，过于长用 '...' 代替 */
+/* text{
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+} */
+.user-info{
+  margin: 0;
+  display: flex;
+  margin: 20rpx 0 20rpx 0 ;
+  flex-shrink: 0;
+  align-items: center;
+  opacity: 0.9;
+  height: 95rpx;
+  flex-shrink: 0;
+}
+.user-head{
+  flex-shrink: 0;
+  margin: 20rpx 0 20rpx 0 ;
+  flex-shrink: 0;
+  border-radius: 50%;
+  height: 70rpx;
+  width: 70rpx;
+}
+.user-name{
+  margin: 50rpx 0 20rpx 10rpx ;
+  flex-shrink: 0;
+  height: 70rpx;
+  width: 70rpx;
+  opacity: 0.9;
+  font-size: 30rpx;
+  text-align: center;
+}
+.index-result{
+  position: fixed;
+  border-top:1px solid hsla(189, 19%, 93%, 0.582);
+  bottom: 0;
+  height: 110rpx;
+  width: 100%;
+  background-color: white;
+}
+.result-ctx{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align: center;
+  font-size: 40rpx;
+}

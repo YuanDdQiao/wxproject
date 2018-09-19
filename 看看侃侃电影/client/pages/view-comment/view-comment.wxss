@@ -1,4 +1,4 @@
-/* pages/top-detail/top-detail.wxss */
+/* client/pages/view-comment/view-comment.wxss */
 .show-bg{
   height: 100%;
   width: 100%;
@@ -111,7 +111,6 @@
   height: 50rpx;
   width: 20%;
   margin-left: 10%;
-  opacity: 0.5;
 }
 .left-footer-txt{
   font-size: 30rpx;
@@ -120,8 +119,7 @@
 .right-footer-img{
   height: 50rpx;
   width: 20%;
-  margin-left: 15%;
-  opacity: 0.5;
+  margin-left: 10%;
 }
 .right-footer-txt{
   font-size: 30rpx;

@@ -1,6 +1,6 @@
 /**app.wxss**/
 page {
-  background: #f9f9f9;
+  background-color: hsla(189, 19%, 93%, 0.582);
 }
 
 .bg {

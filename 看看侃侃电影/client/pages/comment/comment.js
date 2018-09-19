@@ -1,4 +1,5 @@
-// pages/hot/hot.js
+// pages/comment/comment.js
+const app = getApp()
 const qcloud = require('../../vendor/wafer2-client-sdk/index.js')
 const config = require('../../config.js')
 Page({
@@ -7,44 +8,51 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listhotmovie: []
+    // userInfo: null,
+    comments:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getMoviesList()
+    if (!options.view){
+      this.getCommentsListItem(options.id)
+    }
+    console.log("comment:=")
+    if (!!options.view){
+      this.setData({
+        comments: options.comments
+      })
+      console.log(options.view)
+      console.log(options.comments)
+    }
   },
-  hotListItem(){
-    console.log("点。。。。。")
-    // wx.navigateTo({
-    //   url: `/pages/mv-detail/mv-detail?id=${item.id}`,
-    // })
-  },
-  getMoviesList(){
+  getCommentsListItem(id){
     wx.showLoading({
-      title: '热门数据加载中...',
+      title: '评论数据加载中...',
     })
     qcloud.request({
-      url: config.service.moviesList,
+      url: config.service.commentsListItem,
+      data: {
+        comment_id: id
+      },
       success: result => {
         wx.hideLoading()
         if (!result.data.code) {
           this.setData({
-            listhotmovie: result.data.data
+            comments: result.data.data
           })
         } else {
           wx.showToast({
-            title: '数据加载失败',
+            title: '评论数据加载失败',
           })
         }
-        // console.log(result.data.data)
       },
       fail: result => {
         wx.hideLoading()
         wx.showToast({
-          title: '数据加载失败',
+          title: '评论数据加载失败',
         })
       }
     })
@@ -60,7 +68,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    // 同步授权状态
+    // app.checkSession({
+    //   success: ({ userInfo }) => {
+    //     this.setData({
+    //       userInfo
+    //     })
+    //   }
+    // })
   },
 
   /**

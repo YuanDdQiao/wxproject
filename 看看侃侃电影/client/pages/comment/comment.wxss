@@ -1,0 +1,61 @@
+/* pages/comment/comment.wxss */
+.bg{
+  width: 100%;
+  height: 100%;
+}
+.comment-items{
+  border:1px solid hsla(189, 19%, 93%, 0.582);
+}
+.comment-items:first-child{
+  margin-top: 50rpx;
+}
+.comment-item{
+  padding-top: 5%;
+  padding-bottom: 5%;
+  height: 50%;
+  width: 100%;
+  background-color: white;
+}
+.userinfo{
+  display: flex;
+  margin-left: 5%;
+}
+.userhead{
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+}
+.username{
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.usertext{
+  padding-top: 5%;
+  font-size: 30rpx;
+  margin-left: 7%;
+  margin-right: 10%;
+
+  /* css 控制多余文字点点点显示 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.index-result{
+  position: fixed;
+  border-top:1px solid hsla(189, 19%, 93%, 0.582);
+  bottom: 0;
+  height: 110rpx;
+  width: 100%;
+  background-color: white;
+}
+.result-ctx{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align: center;
+  font-size: 40rpx;
+}

@@ -6,5 +6,62 @@
 	},
 	"appid": "wx6dcde8d3de1e846d",
 	"projectname": "侃侃电影",
-	"condition": {}
+	"libVersion": "2.3.0",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": -1,
+					"name": "影评列表",
+					"pathName": "pages/comment/comment",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加影评",
+					"pathName": "pages/add-comment/add-comment",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "电影详情",
+					"pathName": "pages/mv-detail/mv-detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑影评",
+					"pathName": "pages/add-comment/add-comment",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "影评预览",
+					"pathName": "pages/view-comment/view-comment",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user"
+				}
+			]
+		}
+	}
 }
