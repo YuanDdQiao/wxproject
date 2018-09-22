@@ -6,7 +6,14 @@
         <image class='userhead' mode='aspectFill' src="{{item.avatar}}"></image>
         <view class='username'>{{item.username}}</view>
       </view>
-      <view class='usertext'>{{item.content}}</view>
+      <view class='usertext' wx:if="{{!!item.content}}">{{item.content}}</view>
+      <view class='reEditComBox' wx:else>
+        <view class='reEditComButton'>
+          <view class='video-box'>
+            <image class='video-button' mode='aspectFill' src='/Avatar/play.png'></image>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
   <view class='index-result'>

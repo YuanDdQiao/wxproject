@@ -17,9 +17,17 @@ content: options.content,
         <view class='user-name' >{{!!comment?comment.username:""}}的影评</view>
       </view>    
     </view>
-    <view class='reEditComBox'>
+    <view class='reEditComBox' wx:if="{{!comment.content}}">
       <text class='reEditComText'>{{comment.content}}</text>
     </view>
+    <view class='reEditComBox' wx:else>
+      <view class='reEditComButton'>
+        <view class='video-box'>
+          <image class='video-button' mode='aspectFill' src='/Avatar/play.png'></image>
+        </view>
+      </view>
+    </view>
+    
     <view class='show-comment-footer'>
       <view class='show-comment-left-bottom' bindtap='setCollect'>
         <image class='left-footer-img' mode='aspectFill' src='/Avatar/shoucang.png'></image>

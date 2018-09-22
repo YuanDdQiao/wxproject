@@ -35,8 +35,12 @@ Page({
   },
   // addComment(event) {
   addComment() {
+    // console.log("发布影评：")
+    // console.log(this.data.comment.video)
+    // console.log("this.data.comment.recomments:")
+    // console.log(this.data.comment)
     let content = this.data.comment.recomments
-    if (!content) return
+    // if (!content) return
     // console.log(content)
     wx.showLoading({
       title: '正在发表评论'

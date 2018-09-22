@@ -76,6 +76,17 @@
   overflow: hidden;
   text-overflow:ellipsis;
 }
+.video-box{
+  background-color: rgba(159, 175, 175, 0.459);
+  width: 300rpx;
+  height: 65rpx;
+  border-radius: 5%;
+}
+.video-button{
+  width: 65rpx;
+  height: 65rpx;
+  margin-left: 32rpx;
+}
 .show-comment-footer{
   display: flex;
   position: relative;
