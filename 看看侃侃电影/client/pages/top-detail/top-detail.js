@@ -28,6 +28,7 @@ Page({
         cmt: comment.cmt,
         video: comment.video,
         content: comment.content,
+        movie_id: comment.id,
       },
       success: result => {
         wx.hideLoading()
@@ -106,11 +107,57 @@ Page({
       cmt: options.cmt,
       video: options.video
     }
-    this.setData({
-      comment: comment
+
+    // console.log("Object.keys(options).length=")
+    // console.log(Object.keys(options).length<3)
+    // console.log(!comment.content && !comment.video)
+    // console.log(!comment.video)
+    if (Object.keys(options).length > 3){
+      this.setData({
+        comment: comment
+      })
+    }else{
+      // console.log(options.id)
+      this.getCommDetails(options.id)
+    }
+  },
+  getCommDetails(id){
+    wx.showLoading({
+      title: '数据加载中',
+    })
+    // console.log("options.id")
+    // console.log(id)
+
+    // console.log(config.service.moviesDetail+id)
+    qcloud.request({
+      url: config.service.getCommDetails,
+      data:{
+        comment_id:id
+      },
+      success: result => {
+        wx.hideLoading()
+        // console.log("result:")
+        // console.log(result)
+        let data = result.data
+        if (!data.code && !!data.data) {
+          this.setData({
+            comment: data.data,
+          })
+        } else {
+          setTimeout(() => {
+            wx.navigateBack()
+          }, 2000)
+        }
+      },
+      fail: () => {
+        wx.hideLoading()
+
+        setTimeout(() => {
+          wx.navigateBack()
+        }, 2000)
+      }
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

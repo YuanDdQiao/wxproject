@@ -21,7 +21,11 @@ Page({
     //   create_time: "2018-08-26 21:39:25"
     // }
   },
-
+  onPullDownRefresh(){
+    this.getMovieLists(()=>{
+      wx.stopPullDownRefresh()
+    })
+  },
   homeHot() {
     // url = "/pages/hot/hot" 
     wx.navigateTo({
@@ -101,7 +105,7 @@ Page({
       }
     })
   },
-  getMovieLists(){
+  getMovieLists(callback){
     wx.showLoading({
       title: '数据加载中',
     })
@@ -129,6 +133,9 @@ Page({
           title: '数据加载失败',
         })
         console.log(result)
+      },
+      complete: () => {
+        callback && callback()
       }
     })
   },
@@ -186,12 +193,12 @@ Page({
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+  // /**
+  //  * 页面相关事件处理函数--监听用户下拉动作
+  //  */
+  // onPullDownRefresh: function () {
 
-  },
+  // },
 
   /**
    * 页面上拉触底事件的处理函数

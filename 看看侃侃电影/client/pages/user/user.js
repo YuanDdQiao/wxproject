@@ -24,14 +24,45 @@ Page({
       curNav: 0
     })
   },
+  onPullDownRefresh() {
+    this.getCollectList(() => {
+      wx.stopPullDownRefresh()
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.getCollectList()
   },
+  topDetail:function(e){
 
-  getCollectList(){
+    let getId = e.target.dataset.id
+    if (!getId) return
+    let getTitle = e.target.dataset.title
+    let getImage = e.target.dataset.image
+
+    let comment = this.data.liststoremv[getId - 1]
+    let getCommentHead = comment.avatar
+    let getCommentName = comment.username
+    let getCommentContent = comment.content
+    let getCommentOpenId = comment.user
+    let getCmt = comment.cmt
+    let getVideo = comment.video
+    if (getId) {
+      wx.navigateTo({
+        url: `/pages/top-detail/top-detail?id=${getId}&title=${getTitle}&image=${getImage}&avatar=${getCommentHead}&username=${getCommentName}&content=${getCommentContent}&openId=${getCommentOpenId}&cmt=${getCmt}&video=${getVideo}`,
+      })
+    } else {
+      wx.showToast({
+        title: '页面失效',
+      })
+    }
+
+    // console.log("跳转到影评详情...")
+  },
+
+  getCollectList(callback){
     wx.showLoading({
       title: '加载中...',
     })
@@ -58,6 +89,9 @@ Page({
         setTimeout(() => {
           wx.navigateBack()
         }, 2000)
+      },
+      complete:()=>{
+        callback && callback()
       }
     })
   },
@@ -100,9 +134,9 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  // onPullDownRefresh: function () {
   
-  },
+  // },
 
   /**
    * 页面上拉触底事件的处理函数

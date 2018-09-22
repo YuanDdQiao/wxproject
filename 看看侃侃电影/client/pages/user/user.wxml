@@ -9,16 +9,16 @@
     <view class='user-store-top-c'>收藏的影评</view>
     <image class='user-store-top-i t' mode='aspectFit' src='/Avatar/grey-arrow2.png'></image>
   </view>
-  <view wx:if='{{curNav===1}}' class='user-store-items' wx:for='{{liststoremv}}' wx:for-item='items' wx:key='id'>
-    <image class='item-image' src='{{items.image}}' mode='aspectFit'></image>
-    <view class='item-list'>
-      <view class='store-title'>{{items.title}}</view>
-      <view class='store-context'>{{items.context}}</view>
-      <view class='user-info'>
-        <image class='user-head' mode='aspectFit' src="{{!!userInfo?userInfo.avatarUrl: '/Avatar/user-unlogin.png'}}"></image>
-        <view class='user-name' >{{!!userInfo?userInfo.nickName:""}}</view>
+  <view wx:if='{{curNav===1}}' bindtap='topDetail' class='user-store-items' wx:for='{{liststoremv}}' wx:for-item='items' wx:key='id' >
+      <image class='item-image' src='{{items.image}}' mode='aspectFit'  data-id="{{items.id}}" data-image="{{items.image}}" data-title="{{items.title}}"></image>
+      <view class='item-list' data-id="{{items.id}}" data-image="{{items.image}}" data-title="{{items.title}}">
+        <view class='store-title'>{{items.title}}</view>
+        <view class='store-context'>{{items.context}}</view>
+        <view class='user-info'>
+          <image class='user-head' mode='aspectFit' src="{{!!userInfo?userInfo.avatarUrl: '/Avatar/user-unlogin.png'}}"></image>
+          <view class='user-name' >{{!!userInfo?userInfo.nickName:""}}</view>
+        </view>
       </view>
-    </view>
   </view>
 </view>
 <view class='index-result'>

@@ -40,9 +40,12 @@ var config = {
       
         // 收藏电影
         setCollect: `${host}/weapp/addCollect`,
-      
+            
         // 电影收藏列表
         getCollectList: `${host}/weapp/getCollectList`,
+
+        // 影评详情
+        getCommDetails: `${host}/weapp/getCommDetails`,
 
         // 电影评价列表
         getComments: `${host}/weapp/getComments`,

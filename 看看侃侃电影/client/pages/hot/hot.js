@@ -9,20 +9,19 @@ Page({
   data: {
     listhotmovie: []
   },
-
+  onPullDownRefresh(){
+    this.getMoviesList(()=>{
+      wx.stopPullDownRefresh()
+    })
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.getMoviesList()
   },
-  hotListItem(){
-    console.log("点。。。。。")
-    // wx.navigateTo({
-    //   url: `/pages/mv-detail/mv-detail?id=${item.id}`,
-    // })
-  },
-  getMoviesList(){
+  getMoviesList(callback){
     wx.showLoading({
       title: '热门数据加载中...',
     })
@@ -46,7 +45,14 @@ Page({
         wx.showToast({
           title: '数据加载失败',
         })
+      },
+      complete: () => {
+        callback && callback()
+        wx.showToast({
+          title: '数据加载成功',
+        })
       }
+
     })
   },
   /**

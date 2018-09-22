@@ -56,8 +56,10 @@ router.post('/addCollect', validationMiddleware, controllers.comment.addCollect)
 // get 收藏影评
 router.get('/getCollectList', validationMiddleware, controllers.comment.getColls)
 
-// get 影评评价列表
+// get 影评评价详情
 router.get('/getUserComments', validationMiddleware, controllers.comment.getUserComs)
 
+// get 拉去一条电影影评详情
+router.get('/getCommDetails', validationMiddleware, controllers.getHotMovie.getComment)
 
 module.exports = router

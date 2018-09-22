@@ -12,6 +12,7 @@ CREATE TABLE `mov_collect` (
   `cmt` varchar(2) NOT NULL,
   `video` varchar(1023) DEFAULT NULL,
   `title` varchar(255) NOT NULL,
+  `movie_id` int(11) NOT NULL,
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

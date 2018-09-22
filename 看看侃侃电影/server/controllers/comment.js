@@ -33,8 +33,9 @@ module.exports={
     let cmt = ctx.request.body.cmt
     let video = ctx.request.body.video || null
     let title = ctx.request.body.title
+    let movie_id = ctx.request.body.movie_id
 
-    await DB.query('INSERT INTO mov_collect(user,username, avatar,image, content,cmt, video, title) VALUES (?,?, ?, ?, ?, ?, ?,?)', [user,username, avatar, image, content, cmt, video, title])
+    await DB.query('INSERT INTO mov_collect(user,username, avatar,image, content,cmt, video, title,movie_id) VALUES (?,?, ?, ?, ?, ?, ?,?,?)', [user, username, avatar, image, content, cmt, video, title, movie_id])
   },
   getColls: async ctx => {
     ctx.state.data = await DB.query("select * from mov_collect;")
