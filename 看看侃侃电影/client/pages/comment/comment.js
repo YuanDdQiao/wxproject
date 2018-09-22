@@ -19,14 +19,39 @@ Page({
     if (!options.view){
       this.getCommentsListItem(options.id)
     }
-    console.log("comment:=")
     if (!!options.view){
-      this.setData({
-        comments: options.comments
-      })
-      console.log(options.view)
-      console.log(options.comments)
+      this.getCommentsList(options.id)
     }
+  },
+  getCommentsList(id){
+    qcloud.request({
+      url: config.service.getUserComments,
+      data: {
+        moviesId: id
+      },
+      success: result => {
+
+        let data = result.data
+        let comments = data.data
+        if (!data.code && !!data.data) {
+          this.setData({
+            comments: comments,
+          })
+        } else {
+          wx.showToast({
+            title: '跳转失败'
+          })
+          setTimeout(() => {
+            wx.navigateBack()
+          }, 2000)
+        }
+      },
+      fail: () => {
+        wx.showToast({
+          title: '页面跳转失败'
+        })
+      }
+    })
   },
   getCommentsListItem(id){
     wx.showLoading({

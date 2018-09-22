@@ -10,16 +10,12 @@ Page({
   data: {
     userInfo: null,
     comment: {},
-    viewUserComments: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log("评论信息来了：")
-    // console.log(options.id)
-    // console.log(options.erecomments)
     let comment = {
       id: options.id,
       title: options.title,
@@ -33,44 +29,6 @@ Page({
     })
   
   // this.postMovieDetailsComment(options.id)
-  },
-  getUserComments(id){
-    console.log("id:=")
-    console.log(id)
-    qcloud.request({
-      url: config.service.getUserComments,
-      data: {
-        moviesId: id
-      },
-      success: result => {
-
-        let data = result.data
-        let viewUserComments = data.data
-        if (!data.code && !!data.data) {
-          this.setData({
-            viewUserComments: viewUserComments,
-          })
-          console.log("result:=")
-          console.log(result)
-          wx.navigateTo({
-            url: `/pages/comment/comment?comments=${viewUserComments}&view=${1}`,
-          })
-
-        } else {
-          wx.showToast({
-            title: '跳转失败'
-          })
-          setTimeout(() => {
-            wx.navigateBack()
-          }, 2000)
-        }
-      },
-      fail: () => {
-        wx.showToast({
-          title: '页面跳转失败'
-        })
-      }
-    })
   },
   reEditCom(){
      wx.navigateBack()
@@ -104,9 +62,9 @@ Page({
             wx.showToast({
               title: '发表评论成功'
             })
-            console.log("this.data.comment:=")
-            console.log(this.data.comment)
-            this.getUserComments(this.data.comment.id)
+            wx.navigateTo({
+              url: `/pages/comment/comment?id=${this.data.comment.id}&view=${1}`,
+            })
           } else {
             wx.showToast({
               icon: 'none',

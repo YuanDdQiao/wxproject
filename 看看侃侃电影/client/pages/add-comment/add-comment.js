@@ -11,7 +11,7 @@ Page({
   data: {
     userType: "",
     commentValue: '',
-    tempFilePath:"",
+    // tempFilePath:"",
     // 两个变量控制页面 完成按钮是否变色可点击
     setRecordSwitch:0,
     setRecordOrAudio:0,//抛出这个控制变量到页面
@@ -36,10 +36,13 @@ Page({
     // console.log(options.id)
     // console.log("来自电影详情的影评类型cmt：")
     // console.log(options.cmt)
+    // console.log("来自电影详情的录音video：")
+    // console.log(options.video)
     let addcomments = {
       id: options.id,
       title: options.title,
-      image: options.image
+      image: options.image,
+      video: options.video
     }
     this.setData({
       userType: options.cmt,
@@ -65,11 +68,12 @@ Page({
     let eimage = this.data.addcomments.image
     let erecomments = this.data.commentValue
     let commemtType = this.data.userType
-    if ( erecomments != '') {
-      wx.navigateTo({
-        url: `/pages/view-comment/view-comment?id=${eid}&title=${etitle}&image=${eimage}&erecomments=${erecomments}&cmt=${commemtType}`,
+    let commemtVideo = this.data.addcomments.video
+    // if (commemtType = 'wz' || erecomments != '') {
+    wx.navigateTo({
+      url: `/pages/view-comment/view-comment?id=${eid}&title=${etitle}&image=${eimage}&erecomments=${erecomments}&cmt=${commemtType}&video=${this.tempFilePath}`,
       })
-    }
+    // }
   },
   //开始录音的时候
   start: function () {
@@ -85,7 +89,9 @@ Page({
     recorderManager.start(options);
     recorderManager.onStart(() => {
       console.log('开始录音')
-      this.data.setRecordSwitch = 1
+      this.setData({
+        setRecordSwitch: 1,
+      })
     });
     //错误回调
     recorderManager.onError((res) => {
@@ -95,7 +101,9 @@ Page({
         content: '录音失败',
         showCancel: false
       })
-      this.data.setRecordSwitch=0
+      this.setData({
+        setRecordSwitch: 0,
+      })
     })
   },
   //停止录音

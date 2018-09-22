@@ -42,7 +42,7 @@ module.exports={
   getUserComs: async ctx => {
     let moviesId = + ctx.request.query.moviesId
     if (!isNaN(moviesId)) {
-      ctx.state.data = await DB.query("select * from mov_comment where movies_id = ?;", [moviesId])
+      ctx.state.data = await DB.query("select * from mov_comment where movie_id = ?;", [moviesId])
     }else{
       ctx.state.data = []
     }
