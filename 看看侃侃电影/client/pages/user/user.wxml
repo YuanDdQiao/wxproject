@@ -1,19 +1,32 @@
 <!--pages/user/user.wxml-->
 <!-- 个人中心页 -->
 <view class='user-card'>
-  <view class="{{curNav === 0? 'user-store':'hide'}}" bindtap='clickShowT'>
-    <view class='user-store-top-c'>收藏的影评</view>
+  <view class="{{curNav === 0? 'user-store':'hide'}}">
+    <view class='user-store-top-c' bindtap='clickShowT'>已收藏的</view>
     <image class='user-store-top-i' mode='aspectFit' src='/Avatar/grey-arrow.png'></image>
+    <view class='user-store-top-d' bindtap='clickShowG'>已发布的</view>
+    <image class='user-store-top-e' mode='aspectFit' src='/Avatar/grey-arrow.png'></image>
   </view>
-  <view class="{{curNav === 1? 'user-store':'hide'}}" bindtap='clickShowF'>
-    <view class='user-store-top-c'>收藏的影评</view>
-    <image class='user-store-top-i t' mode='aspectFit' src='/Avatar/grey-arrow2.png'></image>
+  <view class="{{curNav === 1? 'user-store':'hide'}}">
+    <view class='user-store-top-c' bindtap='clickShowF'>已收藏的</view>
+    <image class='user-store-top-i t' mode='aspectFit' src='/Avatar/grey-arrow2.png' wx:if="{{curNav === 1 && curNav2 === 0}}"></image>
+    <image class='user-store-top-i t' mode='aspectFit' src='/Avatar/grey-arrow.png' wx:else></image>
+    <view class='user-store-top-d' bindtap='clickShowH'>已发布的</view>
+    <image class='user-store-top-e t' mode='aspectFit' src='/Avatar/grey-arrow2.png' wx:if="{{curNav2 === 1}}"></image>
+    <image class='user-store-top-e t' mode='aspectFit' src='/Avatar/grey-arrow.png' wx:else></image>
   </view>
-  <view wx:if='{{curNav===1}}' bindtap='topDetail' class='user-store-items' wx:for='{{liststoremv}}' wx:for-item='items' wx:key='id' >
-      <image class='item-image' src='{{items.image}}' mode='aspectFit'  data-id="{{items.id}}" data-image="{{items.image}}" data-title="{{items.title}}"></image>
-      <view class='item-list' data-id="{{items.id}}" data-image="{{items.image}}" data-title="{{items.title}}">
+  <view wx:if='{{curNav===1||curNav2===1}}' bindtap='topDetail' class='user-store-items' wx:for='{{liststoremv}}' wx:for-item='items' wx:key='id' >
+      <image class='item-image' src='{{items.image}}' mode='aspectFit' data-id="{{items.movie_id}}" data-index="{{index}}" data-image="{{items.image}}" data-title="{{items.title}}"></image>
+      <view class='item-list' data-id="{{items.movie_id}}" data-index="{{index}}" data-image="{{items.image}}" data-title="{{items.title}}">
         <view class='store-title'>{{items.title}}</view>
-        <view class='store-context'>{{items.context}}</view>
+        <view class='store-context' wx:if="{{!!items.content}}">{{items.content}}</view>
+        <view class='reEditComBox' wx:else>
+          <view class='reEditComButton'>
+            <view class='video-box'>
+              <image class='video-button' mode='aspectFill' src='/Avatar/play.png'></image>
+            </view>
+          </view>
+        </view>
         <view class='user-info'>
           <image class='user-head' mode='aspectFit' src="{{!!userInfo?userInfo.avatarUrl: '/Avatar/user-unlogin.png'}}"></image>
           <view class='user-name' >{{!!userInfo?userInfo.nickName:""}}</view>

@@ -46,12 +46,18 @@ var config = {
 
         // 影评详情
         getCommDetails: `${host}/weapp/getCommDetails`,
-
+      
         // 电影评价列表
         getComments: `${host}/weapp/getComments`,
 
         // 电影评价列表
         getUserComments: `${host}/weapp/getUserComments`,
+
+        // 已发布列表
+        getUserReported: `${host}/weapp/getUserReported`,
+        // 上传接口
+        uploadUrl: `${host}/weapp/upload`,
+
      }
 };
 

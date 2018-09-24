@@ -18,7 +18,7 @@ router.get('/user', validationMiddleware, controllers.user)
 
 // --- 图片上传 Demo --- //
 // 图片上传接口，小程序端可以直接将 url 填入 wx.uploadFile 中
-// router.post('/upload', controllers.upload)
+router.post('/upload', controllers.upload)
 
 // --- 信道服务接口 Demo --- //
 // GET  用来响应请求信道地址的
@@ -61,5 +61,8 @@ router.get('/getUserComments', validationMiddleware, controllers.comment.getUser
 
 // get 拉去一条电影影评详情
 router.get('/getCommDetails', validationMiddleware, controllers.getHotMovie.getComment)
+
+// get 拉取已发布列表
+router.get('/getUserReported', validationMiddleware, controllers.comment.getUserReported)
 
 module.exports = router

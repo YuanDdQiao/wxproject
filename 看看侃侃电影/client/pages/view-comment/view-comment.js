@@ -27,7 +27,8 @@ Page({
     this.setData({
       comment: comment
     })
-  
+  console.log("view-comment--->video:")
+  console.log(options.video)
   // this.postMovieDetailsComment(options.id)
   },
   reEditCom(){
@@ -42,10 +43,6 @@ Page({
     let content = this.data.comment.recomments
     // if (!content) return
     // console.log(content)
-    wx.showLoading({
-      title: '正在发表评论'
-    })
-
     // this.uploadVideo(video => {
       qcloud.request({
         url: config.service.addComment,

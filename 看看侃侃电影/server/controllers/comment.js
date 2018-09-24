@@ -48,4 +48,8 @@ module.exports={
       ctx.state.data = []
     }
   },
+  getUserReported: async ctx => {
+    let openId = ctx.state.$wxInfo.userinfo.openId
+    ctx.state.data = await DB.query("select a.title,a.image,b.avatar,b.content,b.movie_id,b.username,b.cmt,b.video from movies a join mov_comment b on a.id=b.movie_id where user = ?;", [openId])
+  },
 }

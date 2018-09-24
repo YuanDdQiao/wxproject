@@ -17,26 +17,26 @@
 .user-store-top-c{
   color: rgb(255, 153, 0);
   font-size: 30rpx;
-  padding-left: 250rpx;
+  padding-left: 120rpx;
 }
 .user-store-top-i{
-  width: 10rpx;
+  width: 20rpx;
   height: 20rpx;
   margin-left: 10rpx;
-  
-  /* 右 下 箭头图片颜色设置 */
-
-  /* position: relative;
-  left: -20px;
-  border-right: 20px solid transparent;
-  -webkit-filter: drop-shadow(rgb(255, 153, 0) 20px 0);
-  filter: drop-shadow(rgb(255, 153, 0) 20px 0);
- */
- /* 搞不定 */
+}
+.user-store-top-d{
+  color: rgb(255, 153, 0);
+  font-size: 30rpx;
+  padding-left: 100rpx;
+}
+.user-store-top-e{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
 }
 .t{
   width: 20rpx;
-  height: 10rpx;
+  height: 20rpx;
   margin-left: 10rpx;
 }
 .user-store-items{
@@ -96,6 +96,25 @@
   text-overflow:ellipsis;
   white-space:nowrap;
 } */
+.reEditComBox{
+  flex-shrink: 0;
+  height: 50rpx;
+  width: 350rpx;
+  font-size: 25rpx;
+  margin: 20rpx 0 20rpx 0 ;
+}
+.video-box{
+  background-color: rgba(159, 175, 175, 0.459);
+  width: 300rpx;
+  height: 65rpx;
+  border-radius: 5%;
+}
+.video-button{
+  width: 65rpx;
+  height: 65rpx;
+  margin-left: 32rpx;
+}
+
 .user-info{
   margin: 0;
   display: flex;

@@ -47,7 +47,8 @@ Page({
         })
       },
       complete: () => {
-        callback && callback()
+        typeof callback === 'function' && callback()
+        // callback && callback()
         wx.showToast({
           title: '数据加载成功',
         })

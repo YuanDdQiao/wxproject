@@ -63,7 +63,7 @@ Page({
   writeComment(){
     let commentType = ""
     let mvdeailId = this.data.comment.id
-    let mvdeailTitle = this.data.comment.title .l
+    let mvdeailTitle = this.data.comment.title
     let mvdeailImage = this.data.comment.image
     let openId = this.data.comment.openId
     let curPageOpenId = this.data.userInfo.openId

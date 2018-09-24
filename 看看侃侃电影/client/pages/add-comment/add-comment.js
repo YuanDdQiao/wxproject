@@ -63,6 +63,8 @@ Page({
     let commemtType = this.data.userType
     let commemtVideo = this.data.addcomments.video
     // if (commemtType = 'wz' || erecomments != '') {
+      // console.log("点击完成：")
+      // console.log(this.tempFilePath)
     wx.navigateTo({
       url: `/pages/view-comment/view-comment?id=${eid}&title=${etitle}&image=${eimage}&erecomments=${erecomments}&cmt=${commemtType}&video=${this.tempFilePath}`,
       })
@@ -110,6 +112,41 @@ Page({
     this.setData({
       setRecordOrAudio: this.data.setRecordSwitch,
     })
+    wx.showLoading({
+      title: '正在上传录音'
+    })
+    // wx.uploadFile({
+    //   url: config.service.uploadUrl,
+    //   filePath: this.tempFilePath,
+    //   name: 'file',
+
+    //   success: (res) => {
+    //     let response = JSON.parse(res.data);
+
+    //     if (response.code === 0) {
+    //       console.log(response);
+
+    //       // let albumList = this.data.albumList;
+    //       // albumList.unshift(response.data.imgUrl);
+
+    //       // this.setData({ albumList });
+    //       // this.renderAlbumList();
+
+    //       this.showToast('图片上传成功');
+    //     } else {
+    //       console.log(response);
+    //     }
+    //   },
+
+    //   fail: (res) => {
+    //     console.log('fail', res);
+    //   },
+
+    //   complete: () => {
+    //     wx.hideLoading();
+    //   },
+    // });
+
   },
   //播放声音
   // play: function () {
