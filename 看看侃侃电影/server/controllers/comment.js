@@ -40,6 +40,18 @@ module.exports={
   getColls: async ctx => {
     ctx.state.data = await DB.query("select * from mov_collect;")
   },
+  noCollect: async ctx => {
+    let countColl
+    let moviesId = + ctx.request.query.moviesId
+    let openId = ctx.state.$wxInfo.userinfo.openId
+    countColl = (await DB.query("select count(1) as count from mov_collect where user = ? and movie_id = ?;", [openId, moviesId]))[0].count || 0
+    ctx.state.data = countColl
+  },
+  cancCollect: async ctx => {
+    let moviesId = + ctx.request.query.moviesId
+    let openId = ctx.state.$wxInfo.userinfo.openId
+    await DB.query("delete from mov_collect where user = ? and movie_id = ?;", [openId, moviesId])
+  },
   getUserComs: async ctx => {
     let moviesId = + ctx.request.query.moviesId
     if (!isNaN(moviesId)) {

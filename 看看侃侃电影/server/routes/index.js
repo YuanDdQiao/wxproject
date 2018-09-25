@@ -65,4 +65,13 @@ router.get('/getCommDetails', validationMiddleware, controllers.getHotMovie.getC
 // get 拉取已发布列表
 router.get('/getUserReported', validationMiddleware, controllers.comment.getUserReported)
 
+// noCollect
+// 查询是否收藏
+router.get('/noCollect', validationMiddleware, controllers.comment.noCollect)
+
+// cancCollect
+// 取消收藏
+router.get('/cancCollect', validationMiddleware, controllers.comment.cancCollect)
+
+
 module.exports = router

@@ -37,10 +37,16 @@ var config = {
       
         // 获取电影评价
         getComment: `${host}/weapp/getComment`,
-      
+        
         // 收藏电影
         setCollect: `${host}/weapp/addCollect`,
-            
+
+        // 查询是否收藏
+        noCollect: `${host}/weapp/noCollect`,
+
+        // 取消收藏
+        cancCollect: `${host}/weapp/cancCollect`,
+
         // 电影收藏列表
         getCollectList: `${host}/weapp/getCollectList`,
 

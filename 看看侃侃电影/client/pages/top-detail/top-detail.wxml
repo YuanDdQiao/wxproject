@@ -29,7 +29,11 @@ content: options.content,
     </view>
     
     <view class='show-comment-footer'>
-      <view class='show-comment-left-bottom' bindtap='setCollect'>
+      <view class='show-comment-left-bottom' bindtap='cancCollect' wx:if="{{checkOk}}">
+        <image class='left-footer-img' mode='aspectFill' src='/Avatar/shoucang.png'></image>
+        <text class='left-footer-txt'>取消收藏</text>
+      </view>
+      <view class='show-comment-left-bottom' bindtap='setCollect' wx:else>
         <image class='left-footer-img' mode='aspectFill' src='/Avatar/shoucang.png'></image>
         <text class='left-footer-txt'>收藏影评</text>
       </view>
