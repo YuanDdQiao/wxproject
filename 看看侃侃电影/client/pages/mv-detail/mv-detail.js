@@ -115,10 +115,8 @@ Page({
             console.log("没有评价过，请继续！")
             this.gotoAddcom()
           }else{
-            wx.showToast({
-              icon: 'none',
-              title: '您已经评价过了哦！'
-            })
+            console.log("已经评论过了，跳转到评论列表中！")
+            this.displaycom()
           }
         } else {
           wx.showToast({
