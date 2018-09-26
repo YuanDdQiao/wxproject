@@ -47,6 +47,13 @@ module.exports={
     countColl = (await DB.query("select count(1) as count from mov_collect where user = ? and movie_id = ?;", [openId, moviesId]))[0].count || 0
     ctx.state.data = countColl
   },
+  noaCollect: async ctx => {
+    let countColl
+    let moviesId = + ctx.request.query.moviesId
+    let openId = ctx.state.$wxInfo.userinfo.openId
+    countColl = (await DB.query("select count(1) as count from mov_comment where user = ? and movie_id = ?;", [openId, moviesId]))[0].count || 0
+    ctx.state.data = countColl
+  },
   cancCollect: async ctx => {
     let moviesId = + ctx.request.query.moviesId
     let openId = ctx.state.$wxInfo.userinfo.openId

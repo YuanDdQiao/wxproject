@@ -1,16 +1,16 @@
 <!--pages/comment/comment.wxml-->
 <view class='bg'>
   <view class='comment-items' wx:for='{{comments}}' wx:for-item='item' wx:key='id'>
-    <view class='comment-item' wx:if='{{comments}}'>
-      <view class='userinfo'>
-        <image class='userhead' mode='aspectFill' src="{{item.avatar}}"></image>
-        <view class='username'>{{item.username}}</view>
+    <view class='comment-item' wx:if='{{comments}}' bindtap='gotoDetail' data-index="{{index}}">
+      <view class='userinfo'  data-index="{{index}}">
+        <image class='userhead' mode='aspectFill' src="{{item.avatar}}" data-index="{{index}}"></image>
+        <view  data-index="{{index}}" class='username'>{{item.username}}</view>
       </view>
-      <view class='usertext' wx:if="{{!!item.content}}">{{item.content}}</view>
-      <view class='reEditComBox' wx:else>
-        <view class='reEditComButton'>
+      <view  data-index="{{index}}" class='usertext' wx:if="{{!!item.content}}">{{item.content}}</view>
+      <view  data-index="{{index}}" class='reEditComBox' wx:else>
+        <view  data-index="{{index}}" class='reEditComButton'>
           <view class='video-box'>
-            <image class='video-button' mode='aspectFill' src='/Avatar/play.png'></image>
+            <image data-index="{{index}}" class='video-button' mode='aspectFill' src='/Avatar/play.png'></image>
           </view>
         </view>
       </view>

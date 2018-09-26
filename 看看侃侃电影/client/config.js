@@ -40,9 +40,12 @@ var config = {
         
         // 收藏电影
         setCollect: `${host}/weapp/addCollect`,
-
+      
         // 查询是否收藏
         noCollect: `${host}/weapp/noCollect`,
+
+        // 查询是否评论 
+        noaCollect: `${host}/weapp/noaCollect`,
 
         // 取消收藏
         cancCollect: `${host}/weapp/cancCollect`,

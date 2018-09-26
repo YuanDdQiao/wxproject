@@ -68,6 +68,9 @@ Page({
       // console.log(!erecomments)
     let tmps = encodeURIComponent(this.tempFilePath);
     // var uri_dec = decodeURIComponent(uri_enc);
+    // console.log("录音文件对比：")
+    // console.log(this.tempFilePath)
+    // console.log(tmps)
 
     wx.navigateTo({
       url: `/pages/view-comment/view-comment?id=${eid}&title=${etitle}&image=${eimage}&erecomments=${erecomments}&cmt=${commemtType}&video=${tmps}`,

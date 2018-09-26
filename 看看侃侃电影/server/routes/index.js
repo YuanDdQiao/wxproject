@@ -69,6 +69,10 @@ router.get('/getUserReported', validationMiddleware, controllers.comment.getUser
 // 查询是否收藏
 router.get('/noCollect', validationMiddleware, controllers.comment.noCollect)
 
+// noaCollect
+// 查询是否评论过
+router.get('/noaCollect', validationMiddleware, controllers.comment.noaCollect)
+
 // cancCollect
 // 取消收藏
 router.get('/cancCollect', validationMiddleware, controllers.comment.cancCollect)

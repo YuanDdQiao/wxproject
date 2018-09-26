@@ -16,6 +16,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // console.log("机密录音对比：")
+    // console.log(decodeURIComponent(options.video))
+    // console.log(options.video)
     let comment = {
       id: options.id,
       title: options.title,
@@ -65,8 +68,6 @@ Page({
         cmt: content.cmt
       },
       success: result => {
-        wx.hideLoading()
-
         let data = result.data
 
         if (!data.code) {
@@ -84,7 +85,6 @@ Page({
         }
       },
       fail: (error) => {
-        wx.hideLoading()
         console.log("error:")
         console.log(error)
 
@@ -105,7 +105,6 @@ Page({
       url: config.service.uploadUrl,
       filePath: comment.video,
       name: 'file',
-
       success: (res) => {
         let response = JSON.parse(res.data);
 
@@ -125,11 +124,18 @@ Page({
           this.postComm(encodeURIComponent(response.data.imgUrl))
         } else {
           console.log(response);
+          wx.showToast({
+            icon: 'none',
+            title: '上传失败！！请重试。。'
+          })
         }
+        wx.hideLoading()
+
       },
 
       fail: (res) => {
         console.log('fail', res);
+        wx.hideLoading()
       },
 
       complete: () => {

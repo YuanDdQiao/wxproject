@@ -67,22 +67,20 @@ Page({
     })
   },
 
-  // 添加影评
-  // cmt:影评类型
-  // isSucess:调用成功
-  addcom(){
-    let commentType =""
-    let mvdeailId = this.data.mvdetail.id
-    let mvdeailTitle = this.data.mvdetail.title
-    let mvdeailImage = this.data.mvdetail.image
+  gotoAddcom(){
+    let commentType = ""
+    let mvdetail = this.data.mvdetail
+    let mvdeailId = mvdetail.id
+    let mvdeailTitle = mvdetail.title
+    let mvdeailImage = mvdetail.image
     let mvdeailVideo = ""
     wx.showActionSheet({
-      itemList: ["文字","音频"],
-      success:(res)=>{
-        if(!res.cannel){
-          if (res.tapIndex==0){
-            commentType="wz"
-          }else{
+      itemList: ["文字", "音频"],
+      success: (res) => {
+        if (!res.cannel) {
+          if (res.tapIndex == 0) {
+            commentType = "wz"
+          } else {
             commentType = "yp"
           }
           wx.navigateTo({
@@ -92,6 +90,51 @@ Page({
       },
       // fail:function(res){},
       // complete:function(res){}
+    })
+  },
+
+  // 添加影评
+  // cmt:影评类型
+  // isSucess:调用成功
+  addcom(){
+    let mvdetail = this.data.mvdetail
+    let mvdeailId = mvdetail.id
+// noCollect
+    qcloud.request({
+      url: config.service.noaCollect,
+      data: {
+        moviesId: mvdeailId
+      },
+      success: result => {
+        wx.hideLoading()
+        let data = result.data
+        // console.log(result)
+        if (!data.code) {
+          // console.log
+          if(!data.data){
+            console.log("没有评价过，请继续！")
+            this.gotoAddcom()
+          }else{
+            wx.showToast({
+              icon: 'none',
+              title: '您已经评价过了哦！'
+            })
+          }
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: '数据查询失败'
+          })
+        }
+      },
+      fail: () => {
+        wx.hideLoading()
+
+        wx.showToast({
+          icon: 'none',
+          title: '数据查询失败'
+        })
+      }
     })
   },
 })

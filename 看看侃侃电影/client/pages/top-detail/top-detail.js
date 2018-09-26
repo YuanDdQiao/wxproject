@@ -202,7 +202,7 @@ Page({
       content: options.content,
       openId: options.openId,
       cmt: options.cmt,
-      video: options.video
+      video: decodeURIComponent(options.video),
     }
     this.setData({
       checkEx: -1,
