@@ -34,9 +34,9 @@ const CONF = {
         // Bucket 名称
         fileBucket: 'movies',
         // 文件夹
-        uploadFolder: 'audios'
+        uploadFolder: 'audios',
+        mimetypes: ['audio/x-aac', 'audio/mpeg', 'video/webm', 'audio/mpeg', 'audio/mp3', 'audio/m4a'],
     },
-    mimetypes: ['audio/x-aac', 'audio/mpeg', 'video/webm', 'audio/mpeg', 'audio/mp3', 'audio/m4a'],
 
     // 微信登录态有效期
     wxLoginExpires: 7200,
