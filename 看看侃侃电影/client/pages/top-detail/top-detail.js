@@ -159,10 +159,11 @@ Page({
   },
   writeComment(){
     let commentType = ""
-    let mvdeailId = this.data.comment.id
-    let mvdeailTitle = this.data.comment.title
-    let mvdeailImage = this.data.comment.image
-    let openId = this.data.comment.openId
+    let comment = this.data.comment
+    let mvdeailId = comment.id
+    let mvdeailTitle = comment.title
+    let mvdeailImage = comment.image
+    let openId = comment.openId
     let curPageOpenId = this.data.userInfo.openId
     let mvdeailVideo = ""
     if (openId !== curPageOpenId){
@@ -184,9 +185,59 @@ Page({
         // complete:function(res){}
       })
     }else{
-      wx.showToast({
-        title: '已经评论过了哦!',
-      })
+      // url = "/pages/top-detail/top-detail"
+      // 获取静态的电影基本信息
+      // let getMovieId = comment.id
+      // let getMovieTitle = comment.title
+      // let getMovieImage = comment.image
+
+      // 因为当前用户没有对这个电影做评论 ，需求要求跳转到自己的 电影评论详情 页面
+      /**
+       * 设置已评价页面展示
+       */
+
+    //   wx.showLoading({
+    //     title: '666666数据加载中',
+    //   })
+    //   console.log("666666数据加载中")
+    //   qcloud.request({
+    //     url: config.service.getCommDetails,
+    //     data: {
+    //       comment_id: getMovieId
+    //     },
+    //     success: result => {
+    //       let data = result.data
+    //       if (!data.code) {
+    //         // 数据获取成功，马上跳转
+    //         let getListComm = data.data
+    //         let getCommentHead = getListComm.avatar
+    //         let getCommentName = getListComm.username
+    //         let getCommentContent = getListComm.content
+    //         let getCommentOpenId = getListComm.user
+    //         let getCmt = getListComm.cmt
+    //         let getVideo = encodeURIComponent(getListComm.video)
+    //         wx.navigateTo({
+    //           url: `/pages/top-detail/top-detail?id=${getMovieId}&title=${getMovieTitle}&image=${getMovieImage}&avatar=${getCommentHead}&username=${getCommentName}&content=${getCommentContent}&openId=${getCommentOpenId}&cmt=${getCmt}&video=${getVideo}`,
+    //         })
+
+    //       } else {
+    //         wx.showToast({
+    //           icon: 'none',
+    //           title: '数据获取失败'
+    //         })
+    //       }
+    //       wx.hideLoading()
+
+    //     },
+    //     fail: () => {
+    //       wx.hideLoading()
+
+    //       wx.showToast({
+    //         icon: 'none',
+    //         title: '数据获取失败'
+    //       })
+    //     }
+    //   })
     }
   },
   /**

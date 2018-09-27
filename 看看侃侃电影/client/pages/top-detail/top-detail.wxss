@@ -109,6 +109,18 @@
   display: flex;
   align-items: center;
 }
+.show-comment-left-bottom-dis{
+  position: relative;
+  /* 白色周围一圈透明黑 */
+  box-shadow: 0 2rpx 13rpx 5rpx hsla(189, 19%, 93%, 0.582);
+  border:2px solid hsla(189, 19%, 93%, 0.582);
+  border-radius: 10rpx;
+  width: 240rpx;
+  margin-right: 50rpx;
+  display: flex;
+  margin-left: 150rpx;
+  align-items: center;
+}
 .show-comment-right-bottom{
   /* 白色周围一圈透明黑 */
   box-shadow: 0 2rpx 13rpx 5rpx hsla(189, 19%, 93%, 0.582);

@@ -6,7 +6,7 @@
         <image class='userhead' mode='aspectFill' src="{{item.avatar}}" data-index="{{index}}"></image>
         <view  data-index="{{index}}" class='username'>{{item.username}}</view>
       </view>
-      <view  data-index="{{index}}" class='usertext' wx:if="{{!!item.content}}">{{item.content}}</view>
+      <view  data-index="{{index}}" class='usertext' wx:if="{{item.cmt}} === 'wz'">{{item.content}}</view>
       <view  data-index="{{index}}" class='reEditComBox' wx:else>
         <view  data-index="{{index}}" class='reEditComButton'>
           <view class='video-box'>

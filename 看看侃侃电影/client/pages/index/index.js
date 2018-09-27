@@ -10,7 +10,7 @@ Page({
   data: {
     userInfo: null,
     locationAuthType: app.data.locationAuthType,
-    getComment:{},
+    getComment: null,
     gethotmovie:{}
   },
   onPullDownRefresh(){
@@ -37,6 +37,9 @@ Page({
     // console.log(!this.data.userInfo)
     // if (!this.data.userInfo) return;
     this.getMovieLists()
+    // console.log(this.data.getComment)
+    // console.log(!this.data.getComment)
+    // console.log(!!this.data.getComment)
   },
   topDetail(){
     // url = "/pages/top-detail/top-detail"

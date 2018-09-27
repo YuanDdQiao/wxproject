@@ -88,7 +88,7 @@ Page({
     let getCommentContent = comment.content
     let getCommentOpenId = comment.user
     let getCmt = comment.cmt
-    let getVideo = comment.video
+    let getVideo = encodeURIComponent(comment.video)
     // if (getId+1) {
 
       wx.navigateTo({
