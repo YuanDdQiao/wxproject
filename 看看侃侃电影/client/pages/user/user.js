@@ -80,6 +80,14 @@ Page({
     // console.log(getId)
     // if (!getId) return
     let getTitle = e.target.dataset.title
+    if (!getTitle) {
+      wx.showToast({
+        icon: 'none',
+        title: '请点击大图',
+      })
+
+      return
+    }
     let getImage = e.target.dataset.image
 
     let comment = this.data.liststoremv[getId]

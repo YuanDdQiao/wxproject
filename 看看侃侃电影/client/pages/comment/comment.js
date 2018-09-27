@@ -2,6 +2,7 @@
 const app = getApp()
 const qcloud = require('../../vendor/wafer2-client-sdk/index.js')
 const config = require('../../config.js')
+const innerAudioContext = wx.createInnerAudioContext()
 Page({
 
   /**
@@ -42,10 +43,50 @@ Page({
       url: `/pages/top-detail/top-detail?id=${getMovieId}&title=${getMovieTitle}&image=${getMovieImage}&avatar=${getCommentHead}&username=${getCommentName}&content=${getCommentContent}&openId=${getCommentOpenId}&cmt=${getCmt}&video=${getVideo}`,
     })
   },
+  // 播放声音
+  replay: function (e) {
+    let comments = this.data.comments
+    let getIndex = parseInt(e.target.dataset.index)
+    innerAudioContext.autoplay = true
+    let getName = e.target.dataset.name
+    if (getName === "replay") {
+      innerAudioContext.src = this.data.comments[getIndex].video,
+        innerAudioContext.onPlay(() => {
+          console.log('开始播放')
+        })
+      innerAudioContext.onError((res) => {
+        console.log(res.errMsg)
+        console.log(res.errCode)
+      })
+      return
+    }
+  },
+  replayx(e) {
+    let comments = this.data.comments
+    let getIndex = parseInt(e.target.dataset.index)
+    innerAudioContext.autoplay = true
+    let getName = e.target.dataset.name
+    innerAudioContext.src = this.data.comments[getIndex].video,
+      innerAudioContext.onPlay(() => {
+        console.log('开始播放')
+      })
+    innerAudioContext.onError((res) => {
+      console.log(res.errMsg)
+      console.log(res.errCode)
+    })
+
+  },
   gotoDetail: function (e) {
     // url = "/pages/top-detail/top-detail"
     let comments = this.data.comments
     let getIndex = parseInt(e.target.dataset.index)
+    // 判断选择区域
+    let getName = e.target.dataset.name
+    if (getName === "play") {
+      this.replayx(e)
+      return
+    }
+    
     if (isNaN(getIndex)) return
     let id = comments[getIndex].movie_id
     // 先获取电影

@@ -12,10 +12,10 @@
     <view class='reEditComBox' wx:if="{{comment.cmt == 'wz'}}">
       <text class='reEditComText'>{{comment.recomments}}</text>
     </view>
-    <view class='reEditComBox' wx:else>
-      <view class='reEditComButton'>
-        <view class='video-box'>
-          <image class='video-button' mode='aspectFill' src='/Avatar/play.png'></image>
+    <view class='reEditComBox' wx:else bindtap='replay' data-name="play">
+      <view class='reEditComButton' bindtap='replay' data-name="play">
+        <view class='video-box' bindtap='replay' data-name="play">
+          <image class='video-button' mode='aspectFill' src='/Avatar/play.png' bindtap='replay' data-name="play"></image>
         </view>
       </view>
     </view>

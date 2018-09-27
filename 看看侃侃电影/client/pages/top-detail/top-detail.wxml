@@ -20,7 +20,7 @@ content: options.content,
     <view class='reEditComBox' wx:if="{{comment.cmt==='wz'}}">
       <text class='reEditComText'>{{comment.content}}</text>
     </view>
-    <view class='reEditComBox' wx:else>
+    <view class='reEditComBox' wx:else bindtap='replay'>
       <view class='reEditComButton'>
         <view class='video-box'>
           <image class='video-button' mode='aspectFill' src='/Avatar/play.png'></image>

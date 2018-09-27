@@ -2,6 +2,7 @@
 const app = getApp()
 const qcloud = require('../../vendor/wafer2-client-sdk/index.js')
 const config = require('../../config.js')
+const innerAudioContext = wx.createInnerAudioContext()
 Page({
 
   /**
@@ -32,6 +33,23 @@ Page({
     })
     // var uri_dec = decodeURIComponent(uri_enc);
     // this.postMovieDetailsComment(options.id)
+  },
+  // 播放声音
+  replay: function (e) {
+    let comment = this.data.comment
+    innerAudioContext.autoplay = true
+    let getName = e.target.dataset.name
+    if (getName === "play") {
+      innerAudioContext.src = comment.video,
+        innerAudioContext.onPlay(() => {
+          console.log('开始播放')
+        })
+      innerAudioContext.onError((res) => {
+        console.log(res.errMsg)
+        console.log(res.errCode)
+      })
+      return
+    }
   },
   reEditCom(){
      wx.navigateBack()

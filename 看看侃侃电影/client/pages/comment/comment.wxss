@@ -47,6 +47,9 @@
   padding-top: 5%;
   margin-left: 7%;
   margin-right: 10%;
+  width: 250rpx;
+  flex-shrink: 0;
+  height: 70rpx;
 }
 .reEditComText{
   /* text 内容自动换行 */
@@ -67,11 +70,14 @@
   width: 300rpx;
   height: 65rpx;
   border-radius: 5%;
+  flex-shrink: 0;
+
 }
 .video-button{
   width: 65rpx;
   height: 65rpx;
   margin-left: 32rpx;
+  flex-shrink: 0;
 }
 .index-result{
   position: fixed;
