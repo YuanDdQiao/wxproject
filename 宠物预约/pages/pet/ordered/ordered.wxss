@@ -1,0 +1,107 @@
+page {
+    background-color: #fff;
+    font-family: PingFangSC-Regular;
+}
+
+.ppg_timeRest {
+    height: 56rpx;
+    background-color: #F6F6F6;
+}
+
+.ppg_detail {
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+}
+
+.ppg_left {
+    letter-spacing: 0;
+    font-size: 26rpx;
+    color: #818A8D;
+}
+
+.ppg_right {
+    color: #000;
+}
+
+.ppg_title {
+    color: #576B95;
+    margin-top: 30rpx;
+}
+
+.ppg_info {
+    margin-bottom: 16rpx;
+}
+
+.form-group {
+    height: 82rpx;
+    margin-bottom: 0;
+    line-height: 82rpx;
+}
+
+.form-group image {
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+}
+
+.ppg_bottom_border {
+    border-bottom: 1rpx solid #E8E8E8;
+}
+
+input {
+    height: 45rpx;
+    min-height: 0;
+}
+
+.name {
+    display: inline-block;
+    overflow: visible;
+    position: absolute;
+    top: 4rpx;
+    left: 120rpx;
+}
+
+.ppg_btn {
+    width: 226rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    border-radius: 100rpx;
+    font-size: 26rpx;
+    color: #fff;
+    letter-spacing: 0;
+    background-color: #FFBE00;
+    position: absolute;
+    z-index: 9999;
+    right: 0rpx;
+    bottom: 15rpx;
+}
+
+.ppg_confirm {
+    position: absolute;
+    bottom: -255rpx;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #FFBE00;
+    color: #fff;
+    width: 560rpx;
+    height: 80rpx;
+    border-radius: 100rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.ppg_order {
+    width: 560rpx;
+    height: 80rpx;
+    border: 3px solid #FFBE00;
+    border-radius: 100rpx;
+    margin-top: 80rpx;
+    background: #fff;
+    border-radius: 100rpx;
+    color: #576B95;
+    font-size: 38rpx;
+    letter-spacing: 0;
+    line-height: 80rpx;
+}

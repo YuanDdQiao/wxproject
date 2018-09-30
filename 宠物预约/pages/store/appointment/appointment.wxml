@@ -1,0 +1,58 @@
+<view class="ppl_page">
+    <view class="fixed-top ppl_header">
+        <image bindtap="gotoHome" class="ppl_icon" mode="aspectFit" src="{{'/images/icon/goBack.png'}}"></image>
+    </view>
+    <view class="container ppl_pageContainer">
+        <view class="row mt-1">
+            <view class="col">
+                <form bindreset="formReset" bindsubmit="formSubmit">
+                    <view class="form-group">
+                        <label for="service">服务类型</label>
+                        <picker bindchange="bindServiceChange" id="service" range="{{services}}" rangeKey="name" value="{{service}}">
+                            <view class="form-control ppl_picker">
+                {{services[service].name}}
+              </view>
+                        </picker>
+                    </view>
+                    <view class="form-group">
+                        <label for="staff">服务人员</label>
+                        <picker bindchange="bindStaffChange" id="staff" range="{{staffs}}" rangeKey="Name" value="{{staff}}">
+                            <view class="form-control ppl_picker">
+                {{staffs[staff].Name}}
+              </view>
+                        </picker>
+                    </view>
+                    <view class="form-group">
+                        <label for="bookingDate">服务时间</label>
+                        <view class="row">
+                            <view class="col pr-0">
+                                <picker bindchange="bindDateChange" end="{{dateTo}}" id="bookingDate" mode="date" placeholder="选择日期" start="{{dateFrom}}" value="{{date}}">
+                                    <view class="form-control ppl_picker">
+                    {{date}}
+                  </view>
+                                </picker>
+                            </view>
+                            <view class="col">
+                                <picker bindchange="bindTimeChange" placeholder="选择时间" range="{{times}}" value="{{time}}">
+                                    <view class="form-control ppl_picker">
+                    {{times[time]}}
+                  </view>
+                                </picker>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="form-group">
+                        <label>留言信息</label>
+                        <textarea class="form-control ppg_remark" name="remarks" placeholder="输入信息"></textarea>
+                    </view>
+                    <view class="fixed-bottom">
+                        <button class="rounded-0" formType="submit" type="primary">确认预约</button>
+                    </view>
+                </form>
+            </view>
+        </view>
+    </view>
+    <toast hidden="{{bookToastHidden}}" icon="waiting" mask="true">
+     正在提交预约
+  </toast>
+</view>

@@ -1,0 +1,14 @@
+.ppg_store {
+    padding: 0.8rem;
+    min-height: 3rem;
+    text-overflow: ellipsis;
+}
+
+.address {
+    font-size: 80%;
+    color: #888;
+}
+
+page {
+    background-color: #f4f5f6;
+}

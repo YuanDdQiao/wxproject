@@ -1,0 +1,38 @@
+page {
+    font-family: PingFangSC-Regular;
+    background-color: #fff;
+}
+
+.noOrder {
+    width: 293rpx;
+    height: 224rpx;
+    margin: 0 auto;
+    margin-top: 70rpx;
+}
+
+.noOrder image {
+    width: 293rpx;
+    height: 215rpx;
+}
+
+.ppg_prompt {
+    margin-top: 52rpx;
+    margin-bottom: 18rpx;
+    text-align: center;
+}
+
+.ppg_space {
+    height: 56rpx;
+}
+
+.goBack {
+    width: 250rpx;
+    height: 60rpx;
+    background-color: #FFBE00;
+    margin: 0 auto;
+    border-radius: 100rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+}

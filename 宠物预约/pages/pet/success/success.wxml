@@ -1,0 +1,18 @@
+<view class="ppl_page">
+    <view class="container ppl_pageContainer">
+        <view class="noOrder">
+            <image src="../../../images/assets/orderSuccess.png"></image>
+        </view>
+        <view class="col12">
+            <view class="ppg_prompt">
+          预约成功
+          </view>
+            <view class="message">
+            感谢您对本店的支持，欢迎再次光临！
+          </view>
+            <button bindtap="check" class="check ppg_btn">查看订单</button>
+            <button bindtap="goBack" class="goBack ppg_btn">返回首页</button>
+            <button bindtap="share" class="share ppg_btn" openType="share">告诉朋友</button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,108 @@
+page {
+    background-color: #f4f5f6;
+    font-family: PingFangSC-Regular;
+}
+
+input {
+    min-height: 0;
+}
+
+.ppg_top {
+    height: 314rpx;
+    overflow: hidden;
+}
+
+.ppg_headPic {
+    width: 170rpx;
+    height: 170rpx;
+    margin: 0 auto;
+    margin-top: 72rpx;
+}
+
+.ppg_logo {
+    margin: 0 auto;
+    width: 170rpx;
+    height: 170rpx;
+    border-radius: 85rpx;
+}
+
+.ppg_search {
+    height: 70rpx;
+    background-color: #fff;
+}
+
+.ppg_searchInput {
+    box-sizing: border-box;
+    padding-left: 20rpx;
+    width: 668rpx;
+    height: 70rpx;
+    float: left;
+}
+
+.ppg_searchBtn {
+    width: 82rpx;
+    height: 70rpx;
+    float: left;
+    background-color: #FFBD49;
+}
+
+.ppg_searchBtn image {
+    margin: 0 auto;
+    margin-top: 15rpx;
+    width: 38rpx;
+    height: 38rpx;
+    display: block;
+    background-color: #FFBD49;
+}
+
+.ppg_store {
+    height: 143rpx;
+    text-overflow: ellipsis;
+    margin-bottom: 20rpx;
+    font-size: 32rpx;
+}
+
+.ppg_storeName {
+    margin-top: 30rpx;
+    margin-left: 20rpx;
+    position: relative;
+}
+
+.ppg_storeName image {
+    width: 28rpx;
+    height: 28rpx;
+    margin-top: 2rpx;
+    margin-right: 8rpx;
+}
+
+.ppg_prompt {
+    font-size: 80%;
+    color: #888;
+}
+
+.address {
+    margin-left: 46rpx;
+    font-size: 22rpx;
+    color: #888;
+}
+
+.distance {
+    font-size: 26rpx;
+    color: #576B95;
+    position: absolute;
+    right: 40rpx;
+    top: 57rpx;
+}
+
+button::after {
+    border: none;
+}
+
+button {
+    padding: 0;
+    border-radius: 0;
+}
+
+.section {
+    margin-top: 20rpx;
+}

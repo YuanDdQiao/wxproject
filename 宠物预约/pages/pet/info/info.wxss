@@ -1,0 +1,106 @@
+page {
+    font-family: PingFangSC-Regular;
+    background-color: #fff;
+}
+
+.ppg_top {
+    height: 86rpx;
+    background-color: #fff;
+}
+
+.ppg_top view {
+    width: 50%;
+    text-align: center;
+    line-height: 86rpx;
+    float: left;
+    color: #898989;
+}
+
+.ppg_top view text {
+    font-size: 32rpx;
+    letter-spacing: 1.6rpx;
+}
+
+.ppg_top .ppg_active {
+    color: #3A3C4C;
+    height: 80rpx;
+    border-bottom: 6rpx solid #ffbe00;
+}
+
+.ppg_space {
+    height: 20rpx;
+    background-color: #f4f5f6;
+}
+
+.ppg_showInfo {
+    box-sizing: border-box;
+    padding-left: 50rpx;
+}
+
+.ppg_bottom_border {
+    border-bottom: 1rpx solid #E8E8E8;
+}
+
+.ppg_headPic {
+    height: 160rpx;
+    position: relative;
+}
+
+.ppg_photo {
+    border-radius: 50%;
+    width: 110rpx;
+    height: 110rpx;
+    position: absolute;
+    top: 25rpx;
+}
+
+.ppg_edit {
+    position: absolute;
+    font-size: 32rpx;
+    color: #576B95;
+    letter-spacing: 1.6rpx;
+    right: 30rpx;
+    top: 57rpx;
+}
+
+.ppg_infoHeight {
+    height: 91rpx;
+    position: relative;
+    font-size: 32rpx;
+    letter-spacing: 1.6rpx;
+}
+
+.ppg_left {
+    position: absolute;
+    top: 23rpx;
+    color: #898989;
+}
+
+.ppg_right {
+    position: absolute;
+    top: 23rpx;
+    right: 30rpx;
+    color: #3A3C4C;
+}
+
+.ppg_orderHeight {
+    position: relative;
+    letter-spacing: 1.6rpx;
+    height: 104rpx;
+    box-sizing: border-box;
+}
+
+.ppg_leftTab {
+    position: absolute;
+    font-size: 32rpx;
+    color: #898989;
+    top: 30rpx;
+}
+
+.ppg_rightTab {
+    position: absolute;
+    top: 34rpx;
+    right: 20rpx;
+    font-size: 26rpx;
+    color: #3A3C4C;
+}

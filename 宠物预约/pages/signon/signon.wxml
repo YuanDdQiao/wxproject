@@ -1,0 +1,24 @@
+<view class="signon page">
+    <view class="container">
+        <view class="ppg_title">{{storeInfo.storeName}}</view>
+        <form bindreset="formReset" bindsubmit="formSubmit">
+            <view class="form-group ppg_bottom_border">
+                <image src="../../../images/assets/telIcon.png"></image>
+                <text class="ppg_info ppg_left">电话：</text>
+                <input bindinput="bindPhoneInput" class="name" maxlength="11" name="userName" type="number"></input>
+            </view>
+            <view class="form-group ppg_bottom_border">
+                <image src="../../../images/assets/identityCode.png"></image>
+                <text class="ppg_info ppg_left">验证码：</text>
+                <input bindinput="bindPwdInput" class="name code" maxlength="8" name="userPassword" type="number"></input>
+            </view>
+            <view class="col">
+                <button bindtap="requestForCode" class="{{btnClass}}">{{countDownSeconds>0?'发送验证码('+countDownSeconds+'s)':'获取验证码'}}</button>
+            </view>
+            <button bindtap="formSubmit" class="ppg_confirm">确认</button>
+        </form>
+    </view>
+    <toast hidden="{{bookToastHidden}}" icon="waiting" mask="true">
+    请稍候...
+    </toast>
+</view>

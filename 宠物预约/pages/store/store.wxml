@@ -1,0 +1,58 @@
+<view class="ppl_page">
+    <view class="container ppl_pageContainer">
+        <view class="section" wx:if="{{store.Banners.length>0}}">
+            <view class="col ppg_col">
+                <view class="card" style="height:550rpx">
+                    <swiper autoplay="{{true}}" class="swiper" duration="{{1000}}" indicatorActiveColor="rgba(255, 255, 255, .7)" indicatorColor="rgb(255, 255, 255, .5)" indicatorDots="{{true}}" interval="{{5000}}">
+                        <swiper-item class="swiperItem" wx:for="{{store.Banners}}" wx:key="Id">
+                            <image class="ppg_slide" src="{{item.ImagePath}}"></image>
+                        </swiper-item>
+                    </swiper>
+                </view>
+            </view>
+        </view>
+        <view class="section ppg_changeStore" style="height: 70rpx;">
+            <image src="../../images/assets/Location icon.png"></image>
+            <text style="margin-right:10rpx">当前门店:</text>
+            <text>{{address}}</text>
+        </view>
+        <view class="section mt-3 px-3" style="height: 248rpx;">
+            <view bindtap="gotoPets" class="col ppg_service mr-3" style="height: 248rpx;">
+                <image class="ppg_icon" src="../../images/assets/myPetIcon.png"></image>
+                <view class="card ppg_panel">
+                我的宠物
+                </view>
+            </view>
+            <view bindtap="gotoHistory" class="col ppg_service" style="height: 248rpx;">
+                <image class="ppg_icon" src="../../images/assets/myOrderIcon.png"></image>
+                <view class="card ppg_panel">
+                预约记录
+                </view>
+            </view>
+        </view>
+        <view class="section mt-3 px-3">
+            <view bindtap="gotoPetGrooming" class="col ppg_service mr-3" style="height: 248rpx;">
+                <image class="ppg_icon" src="../../images/assets/beautyIcon.png"></image>
+                <view class="card ppg_panel">
+                美容&疫苗
+                </view>
+            </view>
+            <view bindtap="gotoPetBoarding" class="col ppg_service" style="height: 248rpx;">
+                <image class="ppg_icon" src="../../images/assets/fosterIcon.png"></image>
+                <view class="card ppg_panel">
+                寄养预约
+                </view>
+            </view>
+        </view>
+        <view class="section mt-2">
+            <view class="col">
+                <view class="address mt-2">
+                电话：{{store.tel}}
+                </view>
+                <view class="address">
+                地址：{{store.address}}
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

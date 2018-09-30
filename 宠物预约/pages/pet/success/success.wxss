@@ -1,0 +1,66 @@
+page {
+    font-family: PingFangSC-Regular;
+    background-color: #fff;
+}
+
+.noOrder {
+    width: 411rpx;
+    height: 227rpx;
+    margin: 0 auto;
+    margin-top: 70rpx;
+}
+
+.noOrder image {
+    width: 411rpx;
+    height: 218rpx;
+}
+
+.ppg_prompt {
+    margin-top: 40rpx;
+    margin-bottom: 10rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #576B95;
+    letter-spacing: 0;
+}
+
+.message {
+    font-size: 26rpx;
+    color: #818A8D;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.ppg_space {
+    height: 56rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.ppg_btn {
+    width: 560rpx;
+    height: 80rpx;
+    border-radius: 100rpx;
+    background-color: #fff;
+    line-height: 80rpx;
+    font-size: 38rpx;
+    color: #576B95;
+    letter-spacing: 0;
+    margin-bottom: 40rpx;
+}
+
+.check {
+    margin-top: 60rpx;
+    background: #FFBE00;
+    color: #fff;
+}
+
+.goBack {
+    border: 2rpx solid #FFBE00;
+}
+
+.share {
+    border: 2rpx solid #FFBE00;
+}

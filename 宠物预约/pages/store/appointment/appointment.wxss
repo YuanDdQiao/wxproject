@@ -1,0 +1,12 @@
+.ppg_remark {
+    height: 5rem;
+}
+
+.addPetBtn {
+    display: inline-block;
+    color: #FFFFFF;
+    background-color: #1AAD19;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-left: 0.5rem;
+}

@@ -1,0 +1,53 @@
+<view class="ppl_page">
+    <view class="container ppl_pageContainer">
+        <view class="row mt-1 mb-3" wx:if="{{appointments.length==0}}">
+            <view class="noOrder">
+                <image src="../../images/assets/noMessage.png" wx:if="{{appointments.length==0}}"></image>
+            </view>
+            <view class="col12">
+                <view class="ppg_prompt">
+          没有相关预约
+          </view>
+                <button bindtap="addOrder" class="addOrder">我要预约</button>
+            </view>
+        </view>
+        <view class="section ppg_space" wx:if="{{appointments.length>0}}">
+            <view class="ppl_prompt">
+        当前预约
+      </view>
+        </view>
+        <view class="section">
+            <view class="col12" wx:for="{{appointments}}" wx:key="Uid">
+                <view bindtap="goDetail" class="card" data-uid="{{item.Uid}}">
+          {{item.DateStart}}
+          <view class="ppg_endDate" hidden="{{item.ExtData!='宠物寄养'}}">~{{item.DateEnd}}</view>
+                    <view class="ppg_service">
+            {{item.ExtDataJson.service}} {{item.ExtDataJson.petName}}
+          </view>
+                    <view catchtap="cancelAppt" class="ppg_cancel" data-uid="{{item.Uid}}" wx:if="{{item.CanCancel}}">
+                        <view class="ppg_cancelBtn">取消</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="section ppg_space" wx:if="{{appointments.length>0}}">
+            <view class="ppl_prompt">
+      历史预约
+      </view>
+        </view>
+        <view class="section">
+            <view class="col12" wx:for="{{appointments}}" wx:key="Uid">
+                <view class="card ppl_more" data-uid="{{item.Uid}}">
+          {{item.DateStart}}
+          <view class="ppg_endDate" hidden="{{item.ExtData!='宠物寄养'}}">~{{item.DateEnd}}</view>
+                    <view class="ppg_service">
+            {{item.ExtDataJson.service}} {{item.ExtDataJson.petName}}
+          </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <toast hidden="{{toastHidden}}" icon="waiting" mask="true">
+    正在查询...
+  </toast>
+</view>

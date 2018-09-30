@@ -1,0 +1,180 @@
+.radio-group {
+    display: inline-block;
+}
+
+page {
+    font-family: PingFangSC-Regular;
+    background-color: #fff;
+}
+
+.ppg_top {
+    height: 86rpx;
+    background-color: #fff;
+}
+
+.ppg_top view {
+    width: 50%;
+    text-align: center;
+    line-height: 86rpx;
+    float: left;
+    color: #898989;
+}
+
+.ppg_top view text {
+    font-size: 32rpx;
+    letter-spacing: 1.6rpx;
+}
+
+.ppg_top .ppg_active {
+    color: #3A3C4C;
+    height: 80rpx;
+    border-bottom: 6rpx solid #ffbe00;
+}
+
+.ppg_space {
+    height: 20rpx;
+    background-color: #f4f5f6;
+}
+
+.ppg_showInfo {
+    box-sizing: border-box;
+    padding-left: 50rpx;
+}
+
+.ppg_bottom_border {
+    border-bottom: 1rpx solid #E8E8E8;
+}
+
+.ppg_headPic {
+    height: 160rpx;
+    position: relative;
+}
+
+.modal {
+    border-radius: 50%;
+    width: 110rpx;
+    height: 110rpx;
+    position: absolute;
+    z-index: 9999;
+    text-align: center;
+    top: 25rpx;
+    background-color: rgba(0,0,0,.6);
+}
+
+.modal image {
+    margin-top: 30rpx;
+    width: 57rpx;
+    height: 48rpx;
+}
+
+.ppg_photo {
+    border-radius: 50%;
+    width: 110rpx;
+    height: 110rpx;
+    position: absolute;
+    top: 25rpx;
+}
+
+.ppg_save {
+    position: absolute;
+    font-size: 32rpx;
+    color: #576B95;
+    letter-spacing: 1.6rpx;
+    right: 5rpx;
+    top: 45rpx;
+    background-color: #fff;
+}
+
+.ppg_infoHeight {
+    height: 91rpx;
+    line-height: 130rpx;
+    font-size: 32rpx;
+    letter-spacing: 1.6rpx;
+}
+
+.ppg_left {
+    color: #898989;
+}
+
+.ppg_right {
+    color: #3A3C4C;
+}
+
+input {
+    display: inline-block;
+    min-height: 0;
+    overflow: visible;
+}
+
+.ppg_remark {
+    position: absolute;
+    left: 200rpx;
+    top: 642rpx;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.picker {
+    position: relative;
+}
+
+.birthdayPicker {
+    position: absolute;
+    top: 3rpx;
+    left: 170rpx;
+}
+
+.sexPicker {
+    position: absolute;
+    width: 100%;
+    top: 252rpx;
+    left: 130rpx;
+}
+
+.typePicker {
+    position: absolute;
+    width: 100%;
+    top: 347rpx;
+    left: 200rpx;
+}
+
+.sterilizedPicker {
+    position: absolute;
+    width: 100%;
+    top: 531rpx;
+    left: 200rpx;
+}
+
+.ppg_delPet {
+    font-size: 32rpx;
+    color: #576B95;
+    letter-spacing: 1.6rpx;
+}
+
+.ppg_orderHeight {
+    position: relative;
+    letter-spacing: 1.6rpx;
+    height: 104rpx;
+    box-sizing: border-box;
+}
+
+.ppg_leftTab {
+    position: absolute;
+    font-size: 32rpx;
+    color: #898989;
+    top: 30rpx;
+}
+
+.ppg_rightTab {
+    position: absolute;
+    top: 34rpx;
+    right: 20rpx;
+    font-size: 26rpx;
+    color: #3A3C4C;
+}
+
+button::after {
+    border: none;
+}

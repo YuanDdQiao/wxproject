@@ -1,0 +1,15 @@
+<view class="ppl_page">
+    <view class="fixed-top ppl_header">
+        <image bindtap="gotoHome" class="ppl_icon" mode="aspectFit" src="{{'/images/icon/goBack.png'}}"></image>
+    </view>
+    <view class="container ppl_pageContainer">
+        <view class="section">
+            <view class="col6 mt-3">
+                <button bindtap="gotoHome" class="rounded-0" type="primary">返回主页</button>
+            </view>
+            <view class="col6 mt-3">
+                <button bindtap="logout" class="rounded-0" type="secondary">退出帐户</button>
+            </view>
+        </view>
+    </view>
+</view>

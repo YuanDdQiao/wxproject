@@ -1,0 +1,96 @@
+page {
+    font-family: PingFangSC-Regular;
+    background-color: #f4f5f6;
+}
+
+.noOrder {
+    width: 293rpx;
+    height: 224rpx;
+    margin: 0 auto;
+    margin-top: 70rpx;
+}
+
+.noOrder image {
+    width: 293rpx;
+    height: 215rpx;
+}
+
+.ppg_prompt {
+    margin-top: 52rpx;
+    margin-bottom: 18rpx;
+    text-align: center;
+}
+
+.ppg_space {
+    height: 56rpx;
+}
+
+.ppl_prompt {
+    font-size: 22rpx;
+    color: #898989;
+    letter-spacing: 0;
+    margin-top: 10rpx;
+    margin-left: 18rpx;
+}
+
+.addOrder {
+    width: 250rpx;
+    height: 60rpx;
+    background-color: #FFBE00;
+    margin: 0 auto;
+    border-radius: 100rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.card {
+    height: 166rpx;
+    background-color: #fff;
+    font-size: 40rpx;
+    color: #3A3C4C;
+    letter-spacing: 0;
+    padding-top: 29rpx;
+    padding-left: 40rpx;
+    margin-bottom: 20rpx;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.ppg_endDate {
+    font-size: 26rpx;
+    color: #898989;
+    letter-spacing: 0;
+    line-height: 9rpx;
+    margin-bottom: 10rpx;
+}
+
+.ppg_service {
+    font-size: 26rpx;
+    color: #898989;
+    letter-spacing: 0;
+}
+
+.ppg_cancel {
+    position: absolute;
+    width: 144rpx;
+    height: 47rpx;
+    border: 3rpx solid #FFBE00;
+    border-radius: 100rpx;
+    text-align: center;
+    right: 40rpx;
+    top: 60rpx;
+}
+
+.ppg_cancelBtn {
+    margin-top: 6rpx;
+    font-size: 26rpx;
+    color: #576B95;
+    letter-spacing: 0;
+    line-height: 36rpx;
+}
+
+.ppl_more::before {
+    top: 50%;
+}

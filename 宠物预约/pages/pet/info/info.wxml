@@ -1,0 +1,54 @@
+<view class="ppl_page">
+    <view class="container ppl_pageContainer">
+        <view class="ppg_top">
+            <view bindtap="changeInfo" class="{{infoClass}}">
+                <text>基本资料</text>
+            </view>
+            <view bindtap="changeOrder" class="{{orderClass}}">
+                <text>预约记录</text>
+            </view>
+        </view>
+        <view class="ppg_space"></view>
+        <view class="ppg_showInfo" wx:if="{{infoClass=='ppg_active'}}">
+            <view class="ppg_headPic ppg_bottom_border">
+                <image class="ppg_photo" hidden="{{!isPhotoHidden}}" src="../../../images/assets/beautyIcon.png"></image>
+                <image binderror="binderrorimg" class="ppg_photo" hidden="{{isPhotoHidden}}" src="{{pets.PetsPhotoFull}}"></image>
+                <text bindtap="editPet" class="ppg_edit">编辑</text>
+            </view>
+            <view class="ppg_name ppg_infoHeight ppg_bottom_border">
+                <text class="ppg_left">名称</text>
+                <text class="ppg_right">{{pets.PetName}}</text>
+            </view>
+            <view class="ppg_sex ppg_infoHeight ppg_bottom_border">
+                <text class="ppg_left">性别</text>
+                <text class="ppg_right" wx:if="{{pets.PetSex==1}}">男生</text>
+                <text class="ppg_right" wx:if="{{pets.PetSex==2}}">女生</text>
+            </view>
+            <view class="ppg_type ppg_infoHeight ppg_bottom_border">
+                <text class="ppg_left">宠物属性</text>
+                <text class="ppg_right" wx:if="{{pets.PetType==1}}">其他</text>
+                <text class="ppg_right" wx:if="{{pets.PetType==2}}">猫咪</text>
+                <text class="ppg_right" wx:if="{{pets.PetType==3}}">狗狗</text>
+            </view>
+            <view class="ppg_birthday ppg_infoHeight ppg_bottom_border">
+                <text class="ppg_left">宠物生日</text>
+                <text class="ppg_right">{{pets.PetBirthDay}}</text>
+            </view>
+            <view class="ppg_sterilized ppg_infoHeight ppg_bottom_border">
+                <text class="ppg_left">是否绝育</text>
+                <text class="ppg_right" wx:if="{{pets.BeSterilized==1}}">是</text>
+                <text class="ppg_right" wx:if="{{pets.BeSterilized==2}}">否</text>
+            </view>
+            <view class="ppg_remark ppg_infoHeight ppg_bottom_border">
+                <text class="ppg_left">特殊备注</text>
+                <text class="ppg_right">{{pets.Remark}}</text>
+            </view>
+        </view>
+        <view class="ppg_showInfo" wx:if="{{orderClass=='ppg_active'}}" wx:for="{{appointments}}">
+            <view class="ppg_orderHeight ppg_bottom_border">
+                <text class="ppg_leftTab"> {{item.ExtDataJson.service}}</text>
+                <text class="ppg_rightTab"> {{item.DateStart}}</text>
+            </view>
+        </view>
+    </view>
+</view>

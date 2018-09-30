@@ -1,0 +1,106 @@
+<view class="ppl_page">
+    <view class="container ppl_pageContainer">
+        <view class="row mt-2">
+            <view class="col">
+                <form bindreset="formReset" bindsubmit="formSubmit">
+                    <view bindtap="petSelect" class="form-group ppg_infoHeight ppg_bottom_border">
+                        <label class="ppg_left">宠物：
+                      <input disabled placeholder="请选择宠物" value="{{pets[pet].PetName}}"></input>
+                        </label>
+                        <view catchtap="addPet" class="addPet">
+                            <image src="../../../images/assets/addPetIcon.png"></image>
+                            <text> 新增宠物</text>
+                        </view>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <picker bindchange="bindDateChange" end="{{dateTo}}" mode="date" start="{{dateFrom}}" value="{{date}}">
+                            <label class="ppg_left">开始日期：
+                      <input disabled placeholder="请选择预约日期" value="{{date}}"></input>
+                            </label>
+                        </picker>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <picker bindchange="bindTimeChange" range="{{times}}" value="{{time}}">
+                            <label class="ppg_left">开始时间：
+                      <input disabled placeholder="请选择预约时间" value="{{times[time]}}"></input>
+                            </label>
+                        </picker>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <picker bindchange="bindDateChange2" end="{{dateTo}}" mode="date" start="{{dateFrom}}" value="{{date2}}">
+                            <label class="ppg_left">结束日期：
+                      <input disabled placeholder="请选择结束日期" value="{{date2}}"></input>
+                            </label>
+                        </picker>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <picker bindchange="bindTimeChange2" range="{{times2}}" value="{{time2}}">
+                            <label class="ppg_left">结束时间：
+                      <input disabled placeholder="请选择结束时间" value="{{times2[time2]}}"></input>
+                            </label>
+                        </picker>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <label class="ppg_left">喂食习惯：</label>
+                        <checkbox-group bindchange="checkIsOk" class="group" id="food" name="eatingHabits">
+                            <div class="form-check form-check-inline" wx:for="{{eatingHabits}}" wx:key="{{item.id}}">
+                                <label class="form-check-label">
+                                    <checkbox checked="{{item.checked}}" class="form-check-input" value="{{item.name}}"></checkbox>{{item.name}}
+                </label>
+                            </div>
+                        </checkbox-group>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <label class="ppg_left">排便习惯：</label>
+                        <checkbox-group bindchange="checkIsOk" class="group" id="potty" name="pottyHabits">
+                            <div class="form-check form-check-inline" wx:for="{{pottyHabits}}" wx:key="{{item.id}}">
+                                <label class="form-check-label">
+                                    <checkbox checked="{{item.checked}}" class="form-check-input" value="{{item.name}}"></checkbox>{{item.name}}
+                </label>
+                            </div>
+                        </checkbox-group>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <label>备注：
+                  <input name="remarks" placeholder="请输入备注内容" value="{{remark}}"></input>
+                        </label>
+                    </view>
+                    <view class="fixed-bottom">
+                        <button class="{{submitClass}}" formType="submit">确定</button>
+                    </view>
+                </form>
+            </view>
+        </view>
+    </view>
+    <toast hidden="{{bookToastHidden}}" icon="waiting" mask="true">
+    正在提交预约
+  </toast>
+    <view class="mask" hidden="{{mask}}">
+        <view class="petSelect" hidden="{{petSelect}}">
+            <view class="top">
+                <view class="title">宠物</view>
+                <view bindtap="selectCancel" class="cancel">取消</view>
+            </view>
+            <radio-group bindchange="thinkSelectWhoPet" class="pet">
+                <view class="petInfo" id="{{pets[index].Uid}}" wx:for="{{pets}}" wx:key="{{pets[index].Uid}}">
+                    <label class="label">
+                        <view class="headPic"></view>
+                        <view class="petName">{{pets[index].PetName}}</view>
+                        <view class="petSex">
+                            <view class="sexSelect" hidden="{{pets[index].PetSex!=1}}">
+                                <image src="../../../images/assets/boyIcon.png"></image>
+                        男生
+                        </view>
+                            <view class="sexSelect" hidden="{{pets[index].PetSex==1}}">
+                                <image src="../../../images/assets/girlIcon.png"></image>
+                        女生
+                        </view>
+                        </view>
+                        <radio class="form-check-input" id="{{pets[index].Uid}}" value="{{pets[index].Uid}}"></radio>
+                    </label>
+                </view>
+            </radio-group>
+            <view bindtap="petSelected" class="ppg_petConfirm">确定</view>
+        </view>
+    </view>
+</view>

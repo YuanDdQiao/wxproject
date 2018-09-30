@@ -1,0 +1,35 @@
+<view class="ppl_page">
+    <view bindtap="addPet" class="ppg_top" wx:if="{{pets.length!=0}}">
+        <image class="ppl_icon ppg_icon" mode="aspectFit" src="../../images/assets/addIcon.png"></image>
+        <text>添加我的宠物</text>
+    </view>
+    <view class="container ppl_pageContainer">
+        <view class="section">
+            <view class="col12" wx:for="{{pets}}" wx:key="{{item.Uid}}">
+                <view bindtap="editPet" class="card ppg_pet ppl_more" data-storeid="{{item.StoreId}}" data-uid="{{item.Uid}}">
+                    <text class="petName">{{item.PetName}}</text>
+                    <view class="petSex">
+                        <view class="boy" wx:if="{{item.PetSex=='1'}}">
+                            <image class="sexIcon" src="../../images/assets/boyIcon.png"></image>
+                        男生
+                        </view>
+                        <view class="girl" wx:if="{{item.PetSex=='2'}}">
+                            <image class="sexIcon" src="../../images/assets/girlIcon.png"></image>
+                        女生
+                        </view>
+                    </view>
+                    <image binderror="binderrorimg" class="headPic" src="{{item.PetsPhotoFull}}"></image>
+                </view>
+            </view>
+            <view class="noPet">
+                <image src="../../images/assets/noPet.png" wx:if="{{pets.length==0&&loaded}}"></image>
+            </view>
+            <view class="col12 mt-3" wx:if="{{pets.length==0&&loaded}}">
+                <view class="ppg_prompt">
+                你还没有添加宠物
+                </view>
+                <button bindtap="addPet" class="addPet">宠物登记</button>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,26 @@
+<view class="ppl_page">
+    <view class="container ppl_pageContainer">
+        <view class="ppg_timeRest"></view>
+        <view class="ppg_detail">
+            <view class="ppg_title ppg_info ppg_left">预约信息</view>
+            <view class="ppg_info ppg_left">预约门店：<text class="ppg_right">{{storeName}}</text>
+            </view>
+            <view class="ppg_info ppg_left">预约内容：<text class="ppg_right">{{service}}</text>
+            </view>
+            <view class="ppg_info ppg_left">预约宠物：<text class="ppg_right">{{petName}} {{petType}}</text>
+            </view>
+            <view class="ppg_info ppg_left">预约门店：<text class="ppg_right">{{staff}}</text>
+            </view>
+            <view class="ppg_info ppg_left">预约时间：<text class="ppg_right">{{date}} {{time}}</text>
+            </view>
+            <view class="ppg_info ppg_left">预约价格：<text class="ppg_right">￥{{servicePrice}}</text>
+            </view>
+            <view class="ppg_info ppg_left">客户备注：<text class="ppg_right">{{remark?remark:'无'}}</text>
+            </view>
+            <button bindtap="formSubmit" class="ppg_confirm">确认</button>
+        </view>
+    </view>
+    <toast hidden="{{bookToastHidden}}" icon="waiting" mask="true">
+	请稍候...
+	</toast>
+</view>

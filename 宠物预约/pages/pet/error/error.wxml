@@ -1,0 +1,13 @@
+<view class="ppl_page">
+    <view class="container ppl_pageContainer">
+        <view class="noOrder">
+            <image src="../../../images/assets/orderFail.png"></image>
+        </view>
+        <view class="col12">
+            <view class="ppg_prompt">
+          很抱歉，请您确认网络是否连接，再次预约。
+          </view>
+            <button bindtap="goBack" class="goBack">重新预约</button>
+        </view>
+    </view>
+</view>

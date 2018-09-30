@@ -1,0 +1,34 @@
+<view class="ppl_page">
+    <view class="container ppl_pageContainer">
+        <view class="ppg_top">
+            <view class="ppg_headPic">
+                <image class="ppg_logo" src="../../images/icon/naixue/brandLogo.png"></image>
+            </view>
+        </view>
+        <view class="ppg_search">
+            <form bindreset="formReset" bindsubmit="formSubmit">
+                <input class="ppg_searchInput" name="keywords" type="text"></input>
+                <button class="ppg_searchBtn" formType="submit">
+                    <image src="../../images/assets/SearchIcon.png"></image>
+                </button>
+            </form>
+        </view>
+        <toast hidden="{{bookToastHidden}}" icon="waiting" mask="true">
+      正在加载
+    </toast>
+        <view class="section">
+            <view class="col12" wx:for="{{stores}}" wx:key="{{item.storeUserId}}">
+                <view bindtap="bindStore" class="card ppg_store" data-storeid="{{item.storeUserId}}" data-storename="{{item.storeName}}">
+                    <view class="ppg_storeName">
+                        <image src="../../images/assets/shopIcon.png"></image>
+                        {{item.storeName}}
+                        <view class="address">
+                        地址：{{item.address}}
+                        </view>
+                    </view>
+                    <view class="distance"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

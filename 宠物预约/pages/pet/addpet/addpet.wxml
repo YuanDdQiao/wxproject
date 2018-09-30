@@ -1,0 +1,73 @@
+<view class="ppl_page">
+    <view class="container ppl_pageContainer">
+        <view class="row mt-3">
+            <view class="col">
+                <form bindchange="formchange" bindreset="formReset" bindsubmit="formSubmit">
+                    <view>
+                        <view bindtap="headphotoEidt" class="headPic">
+                            <image class="background" hidden="{{!isShow}}" src="../../../images/assets/cameraIcon.png"></image>
+                            <image class="photo" hidden="{{isShow}}" src="{{tempFilePaths}}"></image>
+                        </view>
+                    </view>
+                    <view class="form-group">
+                        <label>名称：
+                            <input autoFocus bindchange="changeClass" class="name" id="name" name="petName" placeholder="请输入宠物名字" value="{{petName}}"></input>
+                        </label>
+                    </view>
+                    <view class="form-group">
+                        性别：
+                            <radio-group bindchange="changeClass" class="radio-group ml-3" id="sex" name="petSex">
+                            <div class="form-check form-check-inline" wx:for="{{petSexs}}" wx:key="{{item.value}}">
+                                <label class="form-check-label">
+                                    <radio checked="{{item.checked}}" class="form-check-input" value="{{item.value}}"></radio>
+                                    <image class="sexIcon" src="../../../images/assets/{{item.img}}"></image>
+                                    <label for="{{item.name}}">{{item.name}}</label>
+                                </label>
+                            </div>
+                        </radio-group>
+                    </view>
+                    <view class="form-group">
+                        属性：
+                            <radio-group bindchange="changeClass" class="radio-group ml-3" id="type" name="petType">
+                            <div class="form-check form-check-inline" wx:for="{{petTypes}}" wx:key="{{item.value}}">
+                                <label class="form-check-label">
+                                    <radio checked="{{item.checked}}" class="form-check-input" id="{{item.name}}" value="{{item.value}}"></radio>
+                                    <label for="{{item.name}}">{{item.name}}</label>
+                                </label>
+                            </div>
+                        </radio-group>
+                    </view>
+                    <view class="form-group">
+                        <picker bindchange="bindPetBirthDayChange" end="{{dateTo}}" mode="date" name="petBirthDay" start="{{dateFrom}}" value="{{petBirthDay}}">
+                            <label>生日：
+                                <input disabled class="name" name="petBirthDay" placeholder="请选择日期" value="{{petBirthDay}}"></input>
+                            </label>
+                        </picker>
+                    </view>
+                    <view class="form-group">
+                        绝育：
+                            <radio-group bindchange="changeClass" class="radio-group ml-3" id="sterilized" name="sterilized">
+                            <div class="form-check form-check-inline" wx:for="{{sterilizeds}}" wx:key="{{item.value}}">
+                                <label class="form-check-label">
+                                    <radio checked="{{item.checked}}" class="form-check-input" value="{{item.value}}"></radio>
+                                    <label for="{{item.name}}">{{item.name}}</label>
+                                </label>
+                            </div>
+                        </radio-group>
+                    </view>
+                    <view class="form-group">
+                        <label>备注：
+                            <input class="name" name="remark" placeholder="请输入备注内容" value="{{remark}}"></input>
+                        </label>
+                    </view>
+                    <view class="fixed-bottom">
+                        <button class="rounded-0 {{submitClass}}" formType="submit">保存</button>
+                    </view>
+                </form>
+            </view>
+        </view>
+    </view>
+    <toast hidden="{{bookToastHidden}}" icon="waiting" mask="true">
+    正在添加宠物
+    </toast>
+</view>

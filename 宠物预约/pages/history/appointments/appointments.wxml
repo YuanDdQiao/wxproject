@@ -1,0 +1,14 @@
+<view class="ppl_page">
+    <view class="container">
+        <view class="section">
+            <view class="col12 mb-3" wx:for="{{pets}}" wx:key="{{item.Uid}}">
+                <view bindtap="editPet" class="card ppg_pet p-2 ppl_more" data-uid="{{item.Uid}}">
+          {{item.PetName}}
+        </view>
+            </view>
+        </view>
+    </view>
+    <view class="fixed-bottom">
+        <button bindtap="addPet" class="rounded-0" type="primary">+添加宠物</button>
+    </view>
+</view>

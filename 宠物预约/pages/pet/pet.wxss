@@ -1,0 +1,102 @@
+page {
+    font-family: PingFangSC-Regular;
+    background-color: #f4f5f6;
+}
+
+.ppg_top {
+    height: 86rpx;
+    line-height: 86rpx;
+    background-color: #fff;
+}
+
+.ppg_top text {
+    font-size: 32rpx;
+    color: #576B95;
+    margin-left: 8rpx;
+    letter-spacing: 1.45rpx;
+}
+
+.ppg_icon {
+    width: 25rpx;
+    height: 24rpx;
+    margin-left: 22rpx;
+}
+
+.ppg_pet {
+    height: 156rpx;
+    margin-top: 20rpx;
+    position: relative;
+}
+
+.ppl_more::before {
+    top: 50%;
+}
+
+.headPic {
+    position: absolute;
+    width: 110rpx;
+    height: 110rpx;
+    top: 23rpx;
+    left: 22rpx;
+    margin-right: 20rpx;
+    background-color: #ccc;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.petName {
+    position: absolute;
+    top: 38rpx;
+    left: 152rpx;
+}
+
+.petSex {
+    position: absolute;
+    top: 88rpx;
+    left: 152rpx;
+    font-size: 22rpx;
+    color: #898989;
+    letter-spacing: 1rpx;
+}
+
+.sexIcon {
+    width: 12rpx;
+    height: 21rpx;
+}
+
+.ppg_panel {
+    padding: 1rem;
+    text-align: center;
+}
+
+.noPet {
+    width: 293rpx;
+    height: 224rpx;
+    margin: 0 auto;
+    margin-top: 85rpx;
+    overflow: hidden;
+}
+
+.noPet image {
+    width: 293rpx;
+    height: 224rpx;
+}
+
+.ppg_prompt {
+    font-size: 32rpx;
+    color: #3A3C4C;
+    text-align: center;
+    margin-bottom: 30rpx;
+}
+
+.addPet {
+    width: 250rpx;
+    height: 60rpx;
+    background-color: #FFBE00;
+    margin: 0 auto;
+    border-radius: 100rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+}

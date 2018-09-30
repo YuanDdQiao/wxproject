@@ -1,0 +1,11 @@
+<view class="ppl_page">
+    <view class="container ppl_pageContainer">
+        <view class="ppg_photo">
+            <image class="background" hidden="{{!isHidden}}" src="../../../images/assets/camera2icon.png"></image>
+            <image binderror="binderrorimg" class="photo" hidden="{{isHidden}}" src="{{tempFilePaths}}"></image>
+        </view>
+        <button bindtap="get" class="ppg_get">从照片中选一张</button>
+        <button bindtap="take" class="ppg_take">拍一张照片</button>
+        <button bindtap="save" class="ppg_save">保存</button>
+    </view>
+</view>

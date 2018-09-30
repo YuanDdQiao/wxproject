@@ -1,0 +1,32 @@
+{
+    "pages": [
+        "pages/store/store",
+        "pages/index/index",
+        "pages/store/binding/binding",
+        "pages/store/appointment/appointment",
+        "pages/history/history",
+        "pages/pet/pet",
+        "pages/pet/photoEdit/photoEdit",
+        "pages/pet/editpet/editpet",
+        "pages/pet/info/info",
+        "pages/pet/boarding/boarding",
+        "pages/pet/grooming/grooming",
+        "pages/pet/orderinfo/orderinfo",
+        "pages/pet/boardinfo/boardinfo",
+        "pages/pet/addpet/addpet",
+        "pages/pet/orderdetail/orderdetail",
+        "pages/pet/ordered/ordered",
+        "pages/pet/error/error",
+        "pages/pet/success/success",
+        "pages/pet/cancelSuccess/cancelSuccess",
+        "pages/pet/cancelFail/cancelFail",
+        "pages/personal/personal",
+        "pages/signon/signon",
+        "pages/help/help"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarBackgroundColor": "#FFBE00"
+    }
+}

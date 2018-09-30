@@ -1,0 +1,108 @@
+radio {
+    transform: scale(.5);
+}
+
+radio .wx-radio-input.wx-radio-input-checked {
+    color: #FFBE00!important;
+    background-color: #FFBE00!important;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+    color: #FFBE00!important;
+}
+
+radio .wx-radio-input.wx-radio-input {
+    background-color: #F6F6F6;
+}
+
+.form-group {
+    margin: 0 40rpx 0 40rpx;
+    border-bottom: 1px solid #E8E8E8;
+    margin-top: 48rpx;
+    font-size: 32rpx;
+    color: #3A3C4C;
+    letter-spacing: 1.6px;
+    font-family: PingFangSC-Regular;
+    position: relative;
+}
+
+input {
+    height: 45rpx;
+    min-height: 0;
+}
+
+.headPic {
+    width: 160rpx;
+    height: 160rpx;
+    background-color: #DBDFE4;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.headPic .background {
+    position: absolute;
+    width: 68rpx;
+    height: 58rpx;
+    top: 50rpx;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.headPic .photo {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 50%;
+}
+
+.name {
+    display: inline-block;
+    overflow: visible;
+    position: absolute;
+    top: 4rpx;
+    left: 120rpx;
+}
+
+.sexIcon {
+    width: 35.2rpx;
+    height: 39.9rpx;
+    vertical-align: middle;
+    margin-right: 2rpx;
+}
+
+.radio-group {
+    display: inline-block;
+}
+
+.form-check-label {
+    padding-left: 0rpx;
+}
+
+.form-check-inline {
+    margin-right: 40rpx;
+}
+
+.form-control {
+    border: none;
+}
+
+.submit {
+    width: 658rpx;
+    height: 90rpx;
+    background: #DBDFE4;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+    border-radius: 100rpx;
+    margin-bottom: 50rpx;
+    color: #fff;
+}
+
+.over {
+    width: 658rpx;
+    height: 90rpx;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+    border-radius: 100rpx;
+    margin-bottom: 50rpx;
+    color: #fff;
+    background-color: #FFBE00;
+}

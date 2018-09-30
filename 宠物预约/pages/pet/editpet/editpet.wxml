@@ -1,0 +1,86 @@
+<view class="ppl_page">
+    <view class="container ppl_pageContainer">
+        <view class="ppg_top">
+            <view bindtap="changeInfo" class="{{infoClass}}">
+                <text>基本资料</text>
+            </view>
+            <view bindtap="changeOrder" class="{{orderClass}}">
+                <text>预约记录</text>
+            </view>
+        </view>
+        <view class="ppg_space"></view>
+        <view class="row ppg_showInfo" wx:if="{{infoClass=='ppg_active'}}">
+            <view class="col">
+                <form bindreset="formReset" bindsubmit="formSubmit">
+                    <view class="ppg_headPic ppg_bottom_border">
+                        <view bindtap="photoEidt" class="modal">
+                            <image src="../../../images/assets/cameraIcon.png"></image>
+                        </view>
+                        <image class="ppg_photo" src="{{tempFilePaths}}"></image>
+                        <button class="ppg_save" formType="submit">保存</button>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <text class="ppg_left">名称：</text>
+                        <input class="ppg_right" name="petName" placeholder="宠物名字" value="{{pet.PetName}}"></input>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <text class="ppg_left">性别：</text>
+                        <picker bindchange="bindPetSexChange" class="sexPicker ppg_right" name="petSex" range="{{PetSexs}}">
+                            <view>
+                  {{PetSexs[petSex]}}
+                </view>
+                        </picker>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <text class="ppg_left">宠物属性：</text>
+                        <picker bindchange="bindPetTypeChange" class="typePicker ppg_right" name="petType" range="{{PetTypes}}">
+                            <view>
+                  {{PetTypes[petType]}}
+                </view>
+                        </picker>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border picker">
+                        <text class="ppg_left">宠物生日：</text>
+                        <picker bindchange="bindPetBirthDayChange" class="birthdayPicker" end="{{dateTo}}" mode="date" name="petBirthDay" start="{{dateFrom}}" value="{{pet.PetBirthDay}}">
+                            <view>
+                {{petBirthDay?petBirthDay:'请输入宠物生日'}}
+              </view>
+                        </picker>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <text class="ppg_left">是否绝育：</text>
+                        <picker bindchange="bindSterilizedChange" class="sterilizedPicker ppg_right" name="sterilized" range="{{Sterilized}}">
+                            <view>
+                  {{Sterilized[sterilizeds]}}
+                </view>
+                        </picker>
+                    </view>
+                    <view class="form-group ppg_infoHeight ppg_bottom_border">
+                        <text class="ppg_left">特别备注：</text>
+                        <input class="ppg_right ppg_remark" name="remark" placeholder="输入备注" value="{{pet.Remark}}"></input>
+                    </view>
+                    <view bindtap="delPet" class="form-group ppg_infoHeight ppg_bottom_border ppg_delPet">
+                        <text>删除该宠物信息</text>
+                    </view>
+                </form>
+            </view>
+        </view>
+        <view class="ppg_showInfo" wx:if="{{orderClass=='ppg_active'}}">
+            <view class="ppg_orderHeight ppg_bottom_border">
+                <text class="ppg_leftTab">洗澡</text>
+                <text class="ppg_rightTab">2017.05.08 18:00</text>
+            </view>
+            <view class="ppg_orderHeight ppg_bottom_border">
+                <text class="ppg_leftTab">美容</text>
+                <text class="ppg_rightTab">2017.05.08 18:00</text>
+            </view>
+            <view class="ppg_orderHeight ppg_bottom_border">
+                <text class="ppg_leftTab">寄养</text>
+                <text class="ppg_rightTab">2017.05.08 18:00~2017.05.08 18:00</text>
+            </view>
+        </view>
+    </view>
+    <toast hidden="{{bookToastHidden}}" icon="waiting" mask="true">
+    正在更新...
+  </toast>
+</view>

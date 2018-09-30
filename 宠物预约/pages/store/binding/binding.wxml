@@ -1,0 +1,43 @@
+<view class="ppl_page">
+    <view class="fixed-top ppl_header">
+        <image bindtap="gotoHome" class="ppl_icon" mode="aspectFit" src="{{'/images/icon/goBack.png'}}"></image>
+    </view>
+    <view class="container ppl_pageContainer">
+        <view class="row mt-3">
+            <view class="col">
+                <form bindreset="formReset" bindsubmit="formSubmit">
+                    <view class="form-group">
+                        <label>查询门店</label>
+                        <picker bindchange="pickIndustry" range="{{industries}}" rangeKey="name" value="{{industry}}">
+                            <view class="form-control ppl_picker">
+                {{industries[industry].name}}
+              </view>
+                        </picker>
+                    </view>
+                    <view class="form-group">
+                        <input class="form-control" name="keywords" placeholder="输入店名查询"></input>
+                    </view>
+                    <view>
+                        <button formType="submit" type="primary">查询</button>
+                    </view>
+                </form>
+            </view>
+        </view>
+        <view class="section">
+            <view class="col12 mt-3" wx:for="{{stores}}" wx:key="storeUserId">
+                <view bindtap="bindStore" class="card ppg_store" data-storeid="{{item.storeUserId}}" data-storename="{{item.storeName}}">
+          {{item.storeName}}
+          <view class="address mt-2">
+            电话：{{item.tel}}
+          </view>
+                    <view class="address mt-2">
+            地址：{{item.address}}
+          </view>
+                </view>
+            </view>
+        </view>
+        <toast hidden="{{bookToastHidden}}" icon="waiting" mask="true">
+      正在查询...
+    </toast>
+    </view>
+</view>
